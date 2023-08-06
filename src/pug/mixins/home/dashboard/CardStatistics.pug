@@ -7,17 +7,17 @@ append variables
       chart: 'echart-market-share',
       data:[
         {
-          brand: 'Samsung',
+          brand: 'Tala',
           color: 'primary',
           percentage: '33'
         },
         {
-          brand: 'Huawei',
+          brand: 'Zenka',
           color: 'info',
           percentage: '29'
         },
         {
-          brand: 'Apple',
+          brand: 'You',
           color: '300',
           percentage: '20'
         },
@@ -61,10 +61,10 @@ mixin CardMarketShare(marketShare=marketShareDefault)
           div(class= `${marketShare.chart}`)
           .position-absolute.top-50.start-50.translate-middle.text-dark.fs-2 26M
 
-mixin CardTotalOrder
+mixin CardRevenueGrowthRate
   .card.h-md-100
     .card-header.pb-0
-      h6.mb-0.mt-2 Total Order
+      h6.mb-0.mt-2 Revenue Growth Rate
     .card-body.d-flex.flex-column.justify-content-end
       .row.justify-content-between
         .col-auto.align-self-end
@@ -99,16 +99,29 @@ mixin CardTotalOrder
               }
             } data-echart-responsive="true")
 
-mixin CardWeeklySales(amountFontSize='fs-4')
+mixin CardMonthlyRecurringRevenue(amountFontSize='fs-4')
   .card.h-md-100.ecommerce-card-min-width
     .card-header.pb-0
-      h6.mb-0.mt-2.d-flex.align-items-center Weekly Sales
-        span.ms-1.text-400(data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales")
-          span.far.fa-question-circle(data-fa-transform="shrink-1")
+      h6.mb-0.mt-2.d-flex.align-items-center Monthly Recurring Revenue
+        //- span.ms-1.text-400(data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales")
+        //-   span.far.fa-question-circle(data-fa-transform="shrink-1")
     .card-body.d-flex.flex-column.justify-content-end
       .row
         .col
           p.font-sans-serif.lh-1.mb-1(class = `${amountFontSize}`) $47K
+          span.badge.badge-subtle-success.rounded-pill.fs--2 +3.5%
+        .col-auto.ps-0
+          .echart-bar-weekly-sales.h-100&attributes(attributes)
+
+
+mixin CardAnnualRunRate(amountFontSize='fs-4')
+  .card.h-md-100.ecommerce-card-min-width
+    .card-header.pb-0
+      h6.mb-0.mt-2.d-flex.align-items-center Annual Run Rate
+    .card-body.d-flex.flex-column.justify-content-end
+      .row
+        .col
+          p.font-sans-serif.lh-1.mb-1(class = `${amountFontSize}`) $564K
           span.badge.badge-subtle-success.rounded-pill.fs--2 +3.5%
         .col-auto.ps-0
           .echart-bar-weekly-sales.h-100&attributes(attributes)

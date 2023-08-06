@@ -93,8 +93,8 @@ const closedVsGoalInit = () => {
         axisTick: { show: false },
         axisLabel: {
           color: utils.getGrays()['400'],
-          formatter: function (value) {
-            var date = new Date(value);
+          formatter(value) {
+            const date = new Date(value);
             return `${date.getDate()} ${months[date.getMonth()]} , 21`;
           },
           margin: 20
@@ -119,7 +119,7 @@ const closedVsGoalInit = () => {
         axisLabel: {
           show: true,
           color: utils.getGrays()['400'],
-          formatter: function (value) {
+          formatter(value) {
             return `$${value}`;
           },
           margin: 15
@@ -130,7 +130,7 @@ const closedVsGoalInit = () => {
       series: [
         {
           type: 'line',
-          name: 'Closed Amount',
+          name: 'Paid Account',
           data: [0, 5000, 18000, 40000, 58000, 65000, 90000, 110000, 140000],
           symbolSize: 5,
           symbol: 'circle',
@@ -144,7 +144,7 @@ const closedVsGoalInit = () => {
         },
         {
           type: 'line',
-          name: 'Revenue Date',
+          name: 'Trial Periods',
           data: [0, 10000, 24000, 35000, 45000, 53000, 57000, 68000, 79000],
           symbolSize: 5,
           symbol: 'circle',
@@ -157,7 +157,12 @@ const closedVsGoalInit = () => {
           }
         }
       ],
-      grid: { right: '25px', left: '100px', bottom: '60px', top: '35px' }
+      grid: {
+        right: '25px',
+        left: '100px',
+        bottom: '60px',
+        top: '35px'
+      }
     });
 
     echartSetOption(chart, userOptions, getDefaultOptions);

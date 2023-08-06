@@ -8,7 +8,7 @@ const upcomingMonthName = window.dayjs && window.dayjs().format('MMM');
 const thisYear = window.dayjs && window.dayjs().format('YYYY');
 const managementEvents = [
   {
-    title: 'Monthly team meeting for Falcon React Project',
+    title: 'Monthly team meeting for Core&Outline React Project',
     start: `${thisYear}-${thisMonthNumber}-07`,
     end: `${thisYear}-${thisMonthNumber}-09`,
     startTime: `07 ${thisMonthName}, ${thisYear}`,

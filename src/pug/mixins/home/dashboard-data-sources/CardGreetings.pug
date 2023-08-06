@@ -1,0 +1,22 @@
+
+mixin CardGreetings
+  - var platforms = ['MongoDB', 'CSV', 'AWS RDS','MySQL', 'Social Media','PostgreSQL','CockroachDB'];
+
+  .card.bg-100.shadow-none.border&attributes(attributes)
+    .row.gx-0.flex-between-center
+      .col-sm-auto.d-flex.align-items-center
+        img(src=`../assets/img/illustrations/crm-bar-chart.png`, alt="" width='90').ms-n2
+        div
+          //- h6.text-primary.fs--1.mb-0 Welcome to 
+          h4.text-primary.fw-bold.mb-0 Manage your data sources here
+            //- span.text-info.fw-medium Social Media Analysis
+        img(src=`../assets/img/illustrations/crm-line-chart.png`, alt="" width='150').ms-n4.d-md-none.d-lg-block
+
+      .col-md-auto.p-3
+        form.row.align-items-center.g-3
+          .col-auto
+          .col-md-auto.position-relative
+            .col-auto.d-flex
+            select.form-select.form-select-sm.select-month.me-2
+              each platform, index in platforms
+                option(value=index)=platform

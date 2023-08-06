@@ -100,7 +100,7 @@
   --#{$prefix}btn-reveal-bg: #{$btn-reveal-bg-dark};
   --#{$prefix}btn-reveal-border-color: #{$btn-reveal-border-color-dark};
 
-  /* ------------------------------ Falcon Button ----------------------------- */
+  /* ------------------------------ Core&Outline Button ----------------------------- */
 
   --#{$prefix}btn-falcon-background: #{$btn-falcon-background-dark};
   --#{$prefix}btn-disabled-color: #{$btn-disabled-color-dark};
@@ -116,7 +116,7 @@
   
   @each $color, $value in $theme-dark-colors {
 
-    /* ------------------------------ Falcon button ----------------------------- */
+    /* ------------------------------ Core&Outline button ----------------------------- */
 
     --#{$prefix}btn-falcon-#{$color}-color: var(--#{$prefix}#{$color});
     --#{$prefix}btn-falcon-#{$color}-hover-color: #{shift-color($value, -17%)};
@@ -239,7 +239,7 @@
   --#{$prefix}simplebar-bg: #{$simplebar-bg-dark};
 
 
-  /* ------------------------------- Falcon Pill ------------------------------ */
+  /* ------------------------------- Core&Outline Pill ------------------------------ */
   --#{$prefix}nav-pills-falcon-active-bg-color: #{$nav-pills-falcon-active-bg-color-dark};
 
   /* ------------------------------- Custom disabled button ------------------------------ */

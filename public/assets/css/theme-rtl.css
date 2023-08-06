@@ -15,7 +15,7 @@
 /*                           End Navbar Vertical                              */
 /* -------------------------------------------------------------------------- */
 /* ------------------------------ Reveal Button ----------------------------- */
-/* ------------------------------ Falcon Button ----------------------------- */
+/* ------------------------------ Core&Outline Button ----------------------------- */
 /* --------------------------------- Avarar --------------------------------- */
 /* ------------------------------ Notification ------------------------------ */
 /* --------------------------------- Kanban --------------------------------- */
@@ -32,11 +32,11 @@
 /* -------------------------------- Card Span ------------------------------- */
 /* ------------------------------ showcase-page ------------------------------ */
 /* -------------------------------- Scrollbar ------------------------------- */
-/* ------------------------------- Falcon Pill ------------------------------ */
+/* ------------------------------- Core&Outline Pill ------------------------------ */
 /* ------------------------------- Custom disabled button ------------------------------ */
 /* ------------------------------- Accordion ------------------------------ */
 /* -------------------------------------------------------------------------- */
-/*                                Falcon Button                               */
+/*                                Core&Outline Button                               */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 /*                                  Utilities                                 */
@@ -326,7 +326,7 @@
   --falcon-btn-reveal-border-color: #dfdfdf;
   /* --------------------------------- Button --------------------------------- */
   --falcon-btn-hover-border-color: transparent;
-  /* ------------------------------ Falcon Button ----------------------------- */
+  /* ------------------------------ Core&Outline Button ----------------------------- */
   --falcon-btn-falcon-background: #fff;
   --falcon-btn-disabled-color: #4d5969;
   --falcon-btn-falcon-box-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1), 0 2px 5px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
@@ -336,7 +336,7 @@
   --falcon-btn-falcon-default-active-background: #e6e6e6;
   --falcon-btn-falcon-default-active-border: #404a57;
   --falcon-btn-active-border-color: transparent;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-primary-color: var(--falcon-primary);
   --falcon-btn-falcon-primary-hover-color: #2566be;
   --falcon-btn-falcon-primary-active-background: #d5e5fa;
@@ -348,7 +348,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-primary-background-color: #d5e5fa;
   --falcon-badge-subtle-primary-color: #1c4f93;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-secondary-color: var(--falcon-secondary);
   --falcon-btn-falcon-secondary-hover-color: #606b7b;
   --falcon-btn-falcon-secondary-active-background: #e3e6ea;
@@ -360,7 +360,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-secondary-background-color: #e3e6ea;
   --falcon-badge-subtle-secondary-color: #7d899b;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-success-color: var(--falcon-success);
   --falcon-btn-falcon-success-hover-color: #00ae65;
   --falcon-btn-falcon-success-active-background: #ccf6e4;
@@ -372,7 +372,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-success-background-color: #ccf6e4;
   --falcon-badge-subtle-success-color: #00864e;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-info-color: var(--falcon-info);
   --falcon-btn-falcon-info-hover-color: #209cd2;
   --falcon-btn-falcon-info-active-background: #d4f2ff;
@@ -384,7 +384,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-info-background-color: #d4f2ff;
   --falcon-badge-subtle-info-color: #1978a2;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-warning-color: var(--falcon-warning);
   --falcon-btn-falcon-warning-hover-color: #cb6a33;
   --falcon-btn-falcon-warning-active-background: #fde6d8;
@@ -396,7 +396,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-warning-background-color: #fde6d8;
   --falcon-badge-subtle-warning-color: #9d5228;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-danger-color: var(--falcon-danger);
   --falcon-btn-falcon-danger-hover-color: #bf2e48;
   --falcon-btn-falcon-danger-active-background: #fad7dd;
@@ -408,7 +408,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-danger-background-color: #fad7dd;
   --falcon-badge-subtle-danger-color: #932338;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-light-color: var(--falcon-light);
   --falcon-btn-falcon-light-hover-color: #cfd0d2;
   --falcon-btn-falcon-light-active-background: #fefeff;
@@ -420,7 +420,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-light-background-color: #fefeff;
   --falcon-badge-subtle-light-color: #9fa0a2;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-dark-color: var(--falcon-dark);
   --falcon-btn-falcon-dark-hover-color: #091320;
   --falcon-btn-falcon-dark-active-background: #ced1d4;
@@ -641,7 +641,7 @@
   /* -------------------------------- Scrollbar ------------------------------- */
   --falcon-scrollbar-bg: rgba(var(--falcon-gray-400-rgb), 0.55);
   --falcon-simplebar-bg: rgba(var(--falcon-gray-400-rgb), 1);
-  /* ------------------------------- Falcon Pill ------------------------------ */
+  /* ------------------------------- Core&Outline Pill ------------------------------ */
   --falcon-nav-pills-falcon-active-bg-color: #fff;
   /* ------------------------------- Hover Background ------------------------------ */
   --falcon-hover-bg-grayblack: #000;
@@ -1111,7 +1111,7 @@
   --falcon-btn-reveal-color: dark;
   --falcon-btn-reveal-bg: #0a1523;
   --falcon-btn-reveal-border-color: #0a1422;
-  /* ------------------------------ Falcon Button ----------------------------- */
+  /* ------------------------------ Core&Outline Button ----------------------------- */
   --falcon-btn-falcon-background: var(--falcon-body-bg);
   --falcon-btn-disabled-color: #4d5969;
   --falcon-btn-falcon-box-shadow: 0 0 0 1px rgba(0, 8, 19, 0.3), 0 2px 5px 0 rgba(0, 13, 33, 0.5), 0 1px 1.5px 0 rgba(0, 8, 1, 0.48), 0 1px 2px 0 rgba(0, 8, 1, 0.4);
@@ -1120,7 +1120,7 @@
   --falcon-btn-falcon-default-hover-color: #c2ccda;
   --falcon-btn-falcon-default-active-background: #0a1523;
   --falcon-btn-falcon-default-active-border: #c2ccda;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-primary-color: var(--falcon-primary);
   --falcon-btn-falcon-primary-hover-color: #5091e9;
   --falcon-btn-falcon-primary-active-background: #070e17;
@@ -1132,7 +1132,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-primary-background-color: #09192e;
   --falcon-badge-subtle-primary-color: #78abee;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-secondary-color: var(--falcon-secondary);
   --falcon-btn-falcon-secondary-hover-color: #8c96a6;
   --falcon-btn-falcon-secondary-active-background: #070e17;
@@ -1144,7 +1144,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-secondary-background-color: #171a1e;
   --falcon-badge-subtle-secondary-color: #6d798b;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-success-color: var(--falcon-success);
   --falcon-btn-falcon-success-hover-color: #2bda91;
   --falcon-btn-falcon-success-active-background: #070e17;
@@ -1156,7 +1156,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-success-background-color: #002a18;
   --falcon-badge-subtle-success-color: #5ce2aa;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-info-color: var(--falcon-info);
   --falcon-btn-falcon-info-hover-color: #4cc7fd;
   --falcon-btn-falcon-info-active-background: #070e17;
@@ -1168,7 +1168,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-info-background-color: #082633;
   --falcon-badge-subtle-info-color: #75d4fe;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-warning-color: var(--falcon-warning);
   --falcon-btn-falcon-warning-hover-color: #f7965f;
   --falcon-btn-falcon-warning-active-background: #070e17;
@@ -1180,7 +1180,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-warning-background-color: #311a0c;
   --falcon-badge-subtle-warning-color: #f9ae83;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-danger-color: var(--falcon-danger);
   --falcon-btn-falcon-danger-hover-color: #ea5974;
   --falcon-btn-falcon-danger-active-background: #070e17;
@@ -1192,7 +1192,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-danger-background-color: #2e0b11;
   --falcon-badge-subtle-danger-color: #ef7f93;
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-light-color: var(--falcon-light);
   --falcon-btn-falcon-light-hover-color: rgba(165, 169, 175, 0.3775);
   --falcon-btn-falcon-light-active-background: #070e17;
@@ -1204,7 +1204,7 @@
   /* ---------------------------------- Badge --------------------------------- */
   --falcon-badge-subtle-light-background-color: rgba(1, 2, 2, 0.85);
   --falcon-badge-subtle-light-color: rgba(210, 213, 216, 0.52);
-  /* ------------------------------ Falcon button ----------------------------- */
+  /* ------------------------------ Core&Outline button ----------------------------- */
   --falcon-btn-falcon-dark-color: var(--falcon-dark);
   --falcon-btn-falcon-dark-hover-color: #fafbfd;
   --falcon-btn-falcon-dark-active-background: #070e17;
@@ -1284,7 +1284,7 @@
   /* -------------------------------- Scrollbar ------------------------------- */
   --falcon-scrollbar-bg: rgba(52, 64, 80, 0.6);
   --falcon-simplebar-bg: rgba(182, 193, 210, 0.6);
-  /* ------------------------------- Falcon Pill ------------------------------ */
+  /* ------------------------------- Core&Outline Pill ------------------------------ */
   --falcon-nav-pills-falcon-active-bg-color: #0b1727;
   /* ------------------------------- Custom disabled button ------------------------------ */
   --falcon-btn-disabled-custom-background: rgba(11, 23, 39, 0.65);
@@ -23142,7 +23142,7 @@ samp {
 }
 
 /*-----------------------------------------------
-|   Falcon buttons
+|   Core&Outline buttons
 -----------------------------------------------*/
 .btn-falcon-primary {
   color: var(--falcon-btn-falcon-primary-color);

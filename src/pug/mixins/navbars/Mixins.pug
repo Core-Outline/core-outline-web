@@ -217,12 +217,13 @@ mixin NavbarSearch
 
 mixin NavbarBrand(config)
   - var config = Object.assign({ image: true }, config)
-  a(href=`${CWD}${paths['default-dashboard']}`).navbar-brand&attributes(attributes)
-    if config.image
-      .d-flex.align-items-center(class=config.wrapperClass)
-        +Logo('falcon')
-    else
-      span(class=`${config.color}`) #{name}
+  //- a(href=`${CWD}${paths['landing']}`).navbar-brand&attributes(attributes)
+  a(href=`#`).navbar-brand&attributes(attributes)
+    //- if config.image
+    //-   .d-flex.align-items-center(class=config.wrapperClass)
+    //-     +Logo('Core&Outline')
+    //- else
+    span(class=`${config.color}`) Core&amp;Outline
 
 mixin NavbarToggleIcon(config)
   = '\n'
@@ -245,12 +246,12 @@ mixin NavbarIcons
         label.mb-0.theme-control-toggle-label.theme-control-toggle-dark(for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme")
           span.fas.fa-moon.fs-0
 
-    li.nav-item.d-none.d-sm-block
-      = '\n'
-      a.nav-link.px-0.notification-indicator.notification-indicator-warning.notification-indicator-fill.fa-icon-wait(href=`${CWD}${paths['shopping-cart']}`)
-        span.fas.fa-shopping-cart(data-fa-transform='shrink-7' style="font-size: 33px;")
-        span.notification-indicator-number 1
-      = '\n'
+    //- li.nav-item.d-none.d-sm-block
+    //-   = '\n'
+    //-   a.nav-link.px-0.notification-indicator.notification-indicator-warning.notification-indicator-fill.fa-icon-wait(href=`${CWD}${paths['shopping-cart']}`)
+    //-     span.fas.fa-shopping-cart(data-fa-transform='shrink-7' style="font-size: 33px;")
+    //-     span.notification-indicator-number 1
+    //-   = '\n'
     li.nav-item.dropdown
       = '\n'
       a#navbarDropdownNotification.nav-link.notification-indicator.notification-indicator-primary.px-0.fa-icon-wait(role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false' data-hide-on-body-scroll)

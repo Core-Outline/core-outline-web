@@ -1,0 +1,180 @@
+
+mixin CardCrmStatistics 
+  span.text-700.fw-medium Customer Segmentation is powered by Location, Transaction and User data.
+  .card&attributes(attributes)
+    .card-body
+      .row
+        -
+          var crmNewUser = 
+            {
+              title: 'User Data',
+              amount: '1635',
+              target: 'users',
+              icon: 'fas fa-user',
+              caret: 'fas fa-caret-up',
+              color: 'info',
+              caretColor: 'success',
+              data: [90, 160, 150, 120, 230, 155, 220,240],
+              lineColor: themeColor.info
+            }
+        +CrmStatisticsItem(crmNewUser, 'dropdown-new-users').border-end-lg.border-bottom.border-bottom-lg-0.py-3.py-lg-0
+        -
+          var crmNewContact = 
+            {
+              title: 'Location data',
+              amount: '15',
+              target: 'countries',
+              icon: 'fas fa-map-marker',
+              caret: 'fas fa-caret-up',
+              color: 'primary',
+              caretColor: 'primary',
+              data: [220, 230, 150, 175, 200, 170, 70, 160],
+              lineColor:  themeColor.primary 
+            }
+        +CrmStatisticsItem(crmNewContact, 'dropdown-new-contact').border-end-lg.border-bottom.border-bottom-lg-0.pb-3.pb-lg-0
+        -
+          var crmNewLeads = 
+            {
+              title: 'Transaction data',
+              amount: '1623',
+              target: 'transactions',
+              icon: 'fas fa-money-bill',
+              caret: 'fas fa-money-bill',
+              color: 'success',
+              caretColor: 'danger',
+              data: [200, 150, 175, 130, 150, 115, 130,100],
+              lineColor: themeColor.success
+            }
+        +CrmStatisticsItem(crmNewLeads, 'dropdown-new-leads').pt-3.pt-lg-0
+
+mixin CrmStatisticsItem(item,id)
+  .col-lg-4&attributes(attributes)
+    .d-flex.flex-between-center.mb-3
+      .d-flex.align-items-center
+        .icon-item.icon-item-sm.bg-primary-subtle.shadow-none.me-2(class = `bg-${item.color}-subtle`)
+          span.fs--2(class = `${item.icon} text-${item.color}`)
+        h6.mb-0 #{item.title}
+      +DashboardDropdown(id)
+    .d-flex
+      .d-flex
+        p.font-sans-serif.lh-1.mb-1.fs-4.pe-2 #{item.amount}
+        .d-flex.flex-column.justify-content-bottom
+          //- span.me-1.text-success(class = `${item.caret} text-${item.caretColor}`)
+          p.fs--2.mb-0.text-nowrap #{item.target} 
+      //- .echart-crm-statistics.w-100.ms-2( data-echart-responsive="true" data-echarts!={
+          series: [
+            { 
+              type: 'line',
+              data: item.data,
+              color: item.lineColor,
+              areaStyle: {
+                color: {
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: item.lineColor+'3A',         
+                    },
+                    {
+                      offset: 1,
+                      color: item.lineColor+'0A',
+                    },
+                  ],
+                },
+            },
+            },
+          ],
+          
+          grid: { bottom: "-10px" },
+        })
+
+
+mixin CardUserGrowthRate(amountFontSize='fs-4')
+  .card.h-md-100.ecommerce-card-min-width
+    .card-header.pb-0
+      h6.mb-0.mt-2.d-flex.align-items-center User Growth
+        //- span.ms-1.text-400(data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales")
+        //-   span.far.fa-question-circle(data-fa-transform="shrink-1")
+    .card-body.d-flex.flex-column.justify-content-end
+      .row
+        .col
+          p.font-sans-serif.lh-1.mb-1(class = `${amountFontSize}`) $47K
+          span.badge.badge-subtle-success.rounded-pill.fs--2 +3.5%
+        .col-auto.ps-0
+          .echart-bar-weekly-sales.h-100&attributes(attributes)
+
+mixin CardUserChurnRate(amountFontSize='fs-4')
+  .card.h-md-100.ecommerce-card-min-width
+    .card-header.pb-0
+      h6.mb-0.mt-2.d-flex.align-items-center Churn Rate
+        //- span.ms-1.text-400(data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales")
+        //-   span.far.fa-question-circle(data-fa-transform="shrink-1")
+    .card-body.d-flex.flex-column.justify-content-end
+      .row
+        .col
+          p.font-sans-serif.lh-1.mb-1(class = `${amountFontSize}`) $47K
+          span.badge.badge-subtle-success.rounded-pill.fs--2 +3.5%
+        .col-auto.ps-0
+          .echart-bar-weekly-sales.h-100&attributes(attributes)
+
+mixin CardLTVCACRatio(amountFontSize='fs-4')
+  .card.h-md-100.ecommerce-card-min-width
+    .card-header.pb-0
+      h6.mb-0.mt-2.d-flex.align-items-center Average LTV : CAC Ratio
+        //- span.ms-1.text-400(data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales")
+        //-   span.far.fa-question-circle(data-fa-transform="shrink-1")
+    .card-body.d-flex.flex-column.justify-content-end
+      .row
+        .col
+          p.font-sans-serif.lh-1.mb-1(class = `${amountFontSize}`) $47K
+          //- span.badge.badge-subtle-success.rounded-pill.fs--2 +3.5%
+
+mixin CardTimetoPayCAC(amountFontSize='fs-4')
+  .card.h-md-100.ecommerce-card-min-width
+    .card-header.pb-0
+      h6.mb-0.mt-2.d-flex.align-items-center Time to Pay back CAC
+        //- span.ms-1.text-400(data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales")
+        //-   span.far.fa-question-circle(data-fa-transform="shrink-1")
+    .card-body.d-flex.flex-column.justify-content-end
+      .row
+        .col
+          p.font-sans-serif.lh-1.mb-1(class = `${amountFontSize}`) 3 Months
+
+
+mixin CardActiveUsers(amountFontSize='fs-4')
+  .card.h-md-100.ecommerce-card-min-width
+    .card-header.md-100.d-flex.flex-row.justify-content-space-around
+      h6.mb-0.mt-2.d-flex.align-items-center Active Users
+      +DashboardDropdown(`crm-deal-forecast-bar`) 
+        //- span.ms-1.text-400(data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales")
+        //-   span.far.fa-question-circle(data-fa-transform="shrink-1")
+    .card-body.d-flex.flex-column.justify-content-end
+      .row
+        .col
+          p.font-sans-serif.lh-1.mb-1(class = `${amountFontSize}`) 17K
+          span.badge.badge-subtle-success.rounded-pill.fs--2 +13.1%
+        .col-auto.ps-0.mt-n4
+          .echart-default-total-order(data-echarts!={
+              tooltip:{
+                trigger:'axis',
+                formatter: '{b0} : {c0}',
+              },
+              xAxis:{
+                data: ['Week 4', 'Week 5', 'Week 6', 'Week 7'],
+              },
+              series: [
+                { 
+                  type: 'line',
+                  data: [20, 40, 100, 120],
+                  smooth:true,
+                  lineStyle: {
+                    width: 3,
+                  },
+                }
+              ],
+            grid:{ 
+                bottom: '2%',
+                top: '2%',
+                right: '10px',
+                left: '10px',
+              }
+            } data-echart-responsive="true")

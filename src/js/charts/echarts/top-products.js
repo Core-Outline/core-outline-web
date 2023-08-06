@@ -11,14 +11,11 @@ const topProductsInit = () => {
 
   if ($echartBarTopProducts) {
     const data = [
-      ['product', '2019', '2018'],
-      ['Boots4', 43, 85],
-      ['Reign Pro', 83, 73],
-      ['Slick', 86, 62],
-      ['Falcon', 72, 53],
-      ['Sparrow', 80, 50],
-      ['Hideway', 50, 70],
-      ['Freya', 80, 90],
+      ['ProductA', '2019', '2018'],
+      ['ProductBs', 43, 85],
+      ['ProductD', 83, 73],
+      ['ProductC', 86, 62],
+      ['ProductE', 72, 53]
     ];
     const userOptions = utils.getData($echartBarTopProducts, 'options');
     const chart = window.echarts.init($echartBarTopProducts);
@@ -37,13 +34,13 @@ const topProductsInit = () => {
         position(pos, params, dom, rect, size) {
           return getPosition(pos, params, dom, rect, size);
         },
-        formatter: function (params) {
+        formatter(params) {
           return `<div class="font-weight-semi-bold">${
             params.seriesName
           }</div><div class="fs--1 text-600"><strong>${params.name}:</strong> ${
             params.value[params.componentIndex + 1]
           }</div>`;
-        },
+        }
       },
       legend: {
         data: ['2019', '2018'],
@@ -53,7 +50,7 @@ const topProductsInit = () => {
         borderRadius: 0,
         icon: 'circle',
         inactiveColor: utils.getGrays()['400'],
-        textStyle: { color: utils.getGrays()['700'] },
+        textStyle: { color: utils.getGrays()['700'] }
       },
       xAxis: {
         type: 'category',
@@ -61,11 +58,11 @@ const topProductsInit = () => {
         axisLine: {
           lineStyle: {
             color: utils.getGrays()['300'],
-            type: 'dashed',
-          },
+            type: 'dashed'
+          }
         },
         axisTick: false,
-        boundaryGap: true,
+        boundaryGap: true
       },
       yAxis: {
         axisPointer: { type: 'none' },
@@ -73,11 +70,11 @@ const topProductsInit = () => {
         splitLine: {
           lineStyle: {
             color: utils.getGrays()['300'],
-            type: 'dashed',
-          },
+            type: 'dashed'
+          }
         },
         axisLine: { show: false },
-        axisLabel: { color: utils.getGrays()['400'] },
+        axisLabel: { color: utils.getGrays()['400'] }
       },
       series: [
         {
@@ -89,9 +86,9 @@ const topProductsInit = () => {
           itemStyle: {
             normal: {
               barBorderRadius: [10, 10, 0, 0],
-              color: utils.getColors().primary,
-            },
-          },
+              color: utils.getColors().primary
+            }
+          }
         },
         {
           type: 'bar',
@@ -101,12 +98,17 @@ const topProductsInit = () => {
           itemStyle: {
             normal: {
               barBorderRadius: [4, 4, 0, 0],
-              color: utils.getGrays()[300],
-            },
-          },
-        },
+              color: utils.getGrays()[300]
+            }
+          }
+        }
       ],
-      grid: { right: '0', left: '30px', bottom: '10%', top: '20%' },
+      grid: {
+        right: '0',
+        left: '30px',
+        bottom: '10%',
+        top: '20%'
+      }
     });
 
     echartSetOption(chart, userOptions, getDefaultOptions);

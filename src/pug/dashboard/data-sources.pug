@@ -1,0 +1,33 @@
+extends ../layouts/LayoutTheme
+include ../mixins/home/dashboard/Mixins
+
+include ../mixins/home/dashboard-data-sources/CardGreetings
+include ../mixins/home/dashboard-data-sources/CardDataSources
+include ../mixins/home/dashboard-data-sources/MongoDBAccordion
+include ../mixins/home/dashboard-data-sources/CSVAccordion
+
+prepend styles
+  link(href=`${CWD}vendors/leaflet/leaflet.css`, rel='stylesheet')
+  link(href=`${CWD}vendors/leaflet.markercluster/MarkerCluster.css`, rel='stylesheet')
+  link(href=`${CWD}vendors/leaflet.markercluster/MarkerCluster.Default.css`, rel='stylesheet')
+  link(href=`${CWD}vendors/flatpickr/flatpickr.min.css`, rel='stylesheet')
+
+
+prepend scripts
+  script(src=`${CWD}vendors/chart/chart.min.js`)
+  script(src=`${CWD}vendors/leaflet/leaflet.js`)
+  script(src=`${CWD}vendors/leaflet.markercluster/leaflet.markercluster.js`)
+  script(src=`${CWD}vendors/leaflet.tilelayer.colorfilter/leaflet-tilelayer-colorfilter.min.js`)
+  script(src=`${CWD}vendors/countup/countUp.umd.js`)
+  script(src=`${CWD}vendors/echarts/echarts.min.js`)
+  script(src=`${CWD}assets/data/world.js`)
+  script(src=`${CWD}vendors/dayjs/dayjs.min.js`)
+  script(src=`${CWD}assets/js/flatpickr.js`)
+
+append content 
+  .row.mb-3 
+    .col
+      +CardGreetings
+      +CardDataSources
+      +MongoDBAccordion
+      +CSVAccordion

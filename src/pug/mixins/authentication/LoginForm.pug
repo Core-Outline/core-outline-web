@@ -18,7 +18,8 @@ mixin LoginForm(config)
           input.form-check-input(type='checkbox')&attributes(config.checkbox.attrs)
           label.form-check-label.mb-0(for=config.checkbox.attrs.id) Remember me
       .col-auto
-        a.fs--1(href=`${CWD}${paths[`${config.layout}-forgot-password`]}`) Forgot Password?
+        //- a.fs--1(href=`${CWD}${paths[`${config.layout}-forgot-password`]}`) Forgot Password?
+        a.fs--1(href=`#`) Forgot Password?
          
     .mb-3
       button.btn.btn-primary.d-block.w-100.mt-3(type='submit' name='submit') Log in

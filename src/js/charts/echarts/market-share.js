@@ -14,11 +14,7 @@ const marketShareInit = () => {
     const chart = window.echarts.init($echartMarketShare);
 
     const getDefaultOptions = () => ({
-      color: [
-        utils.getColors().primary,
-        utils.getColors().info,
-        utils.getGrays()[300],
-      ],
+      color: [utils.getColors().primary, utils.getColors().info, utils.getGrays()[300]],
       tooltip: {
         trigger: 'item',
         padding: [7, 10],
@@ -29,7 +25,7 @@ const marketShareInit = () => {
         transitionDuration: 0,
         formatter(params) {
           return `<strong>${params.data.name}:</strong> ${params.percent}%`;
-        },
+        }
       },
       position(pos, params, dom, rect, size) {
         return getPosition(pos, params, dom, rect, size);
@@ -43,7 +39,7 @@ const marketShareInit = () => {
           hoverAnimation: false,
           itemStyle: {
             borderWidth: 2,
-            borderColor: utils.getColor('gray-100'),
+            borderColor: utils.getColor('gray-100')
           },
           label: {
             normal: {
@@ -52,21 +48,21 @@ const marketShareInit = () => {
               textStyle: {
                 fontSize: '20',
                 fontWeight: '500',
-                color: utils.getGrays()['100'],
-              },
+                color: utils.getGrays()['100']
+              }
             },
             emphasis: {
-              show: false,
-            },
+              show: false
+            }
           },
           labelLine: { normal: { show: false } },
           data: [
-            { value: 5300000, name: 'Samsung' },
+            { value: 5300000, name: 'Tala' },
             { value: 1900000, name: 'Huawei' },
-            { value: 2000000, name: 'Apple' },
-          ],
-        },
-      ],
+            { value: 2000000, name: 'Apple' }
+          ]
+        }
+      ]
     });
 
     echartSetOption(chart, userOptions, getDefaultOptions);

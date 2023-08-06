@@ -3,9 +3,14 @@ mixin AskIntelligence
     .card-header
       .d-flex.align-items-center
         img.me-2(src=`${CWD}assets/img/icons/signal.png` alt="" height='35')
-        h5.fs-0.fw-normal.text-800.mb-0 Ask Falcon Intelligence
+        h5.fs-0.fw-normal.text-800.mb-0 Ask Chris from Core&amp;Outline
     .card-body.p-0
       .scrollbar-overlay.pt-0.px-x1.ask-analytics
+        +SingleItem({
+          title: 'Geographic Analysis',
+          icon: 'fas fa-map-marker-alt',
+          description:  'What pages do people from Nairobi West go to the most?',
+        }).mb-3
         +SingleItem({
           title: 'Content Analysis',
           icon: 'fas fa-code-branch',
@@ -21,11 +26,7 @@ mixin AskIntelligence
           icon: 'fas fa-project-diagram',
           description:  'What are my top default channel groupings by user?',
         }).mb-3
-        +SingleItem({
-          title: 'Geographic Analysis',
-          icon: 'fas fa-map-marker-alt',
-          description:  'What pages do people from California go to the most?',
-        }).mb-3
+        
     .card-footer.bg-light.text-end.py-2
       a.btn.btn-link.btn-sm.px-0.fw-medium(href='#!') More Insights
         span.fas.fa-chevron-right.ms-1.fs--2

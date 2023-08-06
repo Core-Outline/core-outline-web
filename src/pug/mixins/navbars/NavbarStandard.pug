@@ -1,6 +1,7 @@
 include ../authentication/LoginForm
 include ../authentication/SocialButtons
 include Mixins
+include ../authentication/RegisterForm
 
 mixin NavbarStandard(config)
   nav.navbar.navbar-standard&attributes(attributes)
@@ -9,7 +10,7 @@ mixin NavbarStandard(config)
       button.navbar-toggler.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#navbarStandard' aria-controls='navbarStandard' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarStandard.collapse.navbar-collapse.scrollbar
-        +NewTopNav({combo:false})
+        //- +NewTopNav({combo:false})
         block
 
 
@@ -23,12 +24,18 @@ mixin NavbarStandard(config)
               h5#modalLabel Register
             .col-auto
               p.fs--1.text-600.mb-0 Have an account? 
-                a(href=`${CWD}${paths['simple-login']}`) Login
+                //- a(href=`${CWD}${paths['simple-login']}`) Login
+                a(href=`#`) Login
           +RegisterForm({
-            name: { attrs: { placeholder: 'Name' } },
+            name: { attrs: { placeholder: 'Name'} },
             email: { attrs: { placeholder: 'Email address' } },
             password: { attrs: { placeholder: 'Password' } },
             confirmPassword: { attrs: { placeholder: 'Confirm Password' } },
             checkbox: { attrs: { id: 'modal-register-checkbox' } },
+            companyName: { attrs: { placeholder: 'Company Name'} },
+            contactEmail: { attrs: { placeholder: 'Contact Email' } },
+            location: { attrs: { placeholder: 'Location' } },
+            industry: { attrs: { placeholder: 'Industry: advertising, agriculture, hospitality etc.' } },
+            employeeCount: { attrs: { placeholder: 'Number of Employees' } },
           })
           +SocialButtons({ title: 'register' }).mt-4

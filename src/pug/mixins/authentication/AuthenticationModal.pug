@@ -8,14 +8,14 @@ mixin AuthenticationModal
         .modal-header.px-5.position-relative.modal-shape-header.bg-shape
           .position-relative.z-1(data-bs-theme="light")
             h4.mb-0.text-white#authentication-modal-label Register
-            p.fs--1.mb-0.text-white Please create your free Falcon account
+            p.fs--1.mb-0.text-white Please create your free Core&Outline account
           button.btn-close.btn-close-white.position-absolute.top-0.end-0.mt-2.me-2(data-bs-dismiss="modal" aria-label="Close")
 
         .modal-body.py-4.px-5
           +RegisterForm({
             name: {
               label: 'Name',
-              attrs: { id: 'modal-auth-name' }
+              attrs: { id: 'name' }
             },
             email: {
               label: 'Email address',
@@ -28,6 +28,26 @@ mixin AuthenticationModal
             confirmPassword: {
               label: 'Confirm Password',
               attrs: { id: 'modal-auth-confirm-password' }
+            },
+            companyName: {
+              label: 'Company Name',
+              attrs: { id: 'modal-company-name' }
+            },
+            contactEmail: {
+              label: 'Contact Email',
+              attrs: { id: 'modal-company-email' }
+            },
+            location: {
+              label: 'Location',
+              attrs: { id: 'modal-location' }
+            },
+            industry: {
+              label: 'Industry',
+              attrs: { id: 'modal-industry' }
+            },
+            employeeCount: {
+              label: 'Number of Employees',
+              attrs: { id: 'modal-employee-count' }
             },
             checkbox: { attrs: { id: 'modal-auth-register-checkbox' } },
           })

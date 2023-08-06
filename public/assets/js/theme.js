@@ -887,7 +887,7 @@ var advanceAjaxTableInit = function advanceAjaxTableInit() {
           status = values.status,
           badge = values.badge,
           amount = values.amount;
-        return "\n          <tr class=\"btn-reveal-trigger\">\n            <td class=\"order py-2 align-middle white-space-nowrap\">\n              <a href=\"https://prium.github.io/falcon/v3.16.0/app/e-commerce/orders/order-details.html\">\n                <strong>".concat(orderId, "</strong>\n              </a>\n              by\n              <strong>").concat(name, "</strong>\n              <br />\n              <a href=\"mailto:").concat(email, "\">").concat(email, "</a>\n            </td>\n            <td class=\"py-2 align-middle\">\n              ").concat(date, "\n            </td>\n            <td class=\"py-2 align-middle white-space-nowrap\">\n              ").concat(address, "\n              <p class=\"mb-0 text-500\">").concat(shippingType, "</p>\n            </td>\n            <td class=\"py-2 align-middle text-center fs-0 white-space-nowrap\">\n              <span class=\"badge rounded-pill d-block badge-subtle-").concat(badge.type, "\">\n                ").concat(status, "\n                <span class=\"ms-1 ").concat(badge.icon, "\" data-fa-transform=\"shrink-2\"></span>\n              </span>\n            </td>\n            <td class=\"py-2 align-middle text-end fs-0 fw-medium\">\n              ").concat(amount, "\n            </td>\n            <td class=\"py-2 align-middle white-space-nowrap text-end\">\n              <div class=\"dropstart font-sans-serif position-static d-inline-block\">\n                <button class=\"btn btn-link text-600 btn-sm dropdown-toggle btn-reveal\" type='button' id=\"order-dropdown-").concat(id, "\" data-bs-toggle=\"dropdown\" data-boundary=\"window\" aria-haspopup=\"true\" aria-expanded=\"false\" data-bs-reference=\"parent\">\n                  <span class=\"fas fa-ellipsis-h fs--1\"></span>\n                </button>\n                <div class=\"dropdown-menu dropdown-menu-end border py-2\" aria-labelledby=\"order-dropdown-").concat(id, "\">\n                  <a href=\"#!\" class=\"dropdown-item\">View</a>\n                  <a href=\"#!\" class=\"dropdown-item\">Edit</a>\n                  <a href=\"#!\" class=\"dropdown-item\">Refund</a>\n                  <div class\"dropdown-divider\"></div>\n                  <a href=\"#!\" class=\"dropdown-item text-warning\">Archive</a>\n                  <a href=\"#!\" class=\"dropdown-item text-warning\">Archive</a>\n                </div>\n              </div>\n            </td>\n          </tr>\n        ");
+        return "\n          <tr class=\"btn-reveal-trigger\">\n            <td class=\"order py-2 align-middle white-space-nowrap\">\n              <a href=\"https://prium.github.io/Core&Outline/v3.16.0/app/e-commerce/orders/order-details.html\">\n                <strong>".concat(orderId, "</strong>\n              </a>\n              by\n              <strong>").concat(name, "</strong>\n              <br />\n              <a href=\"mailto:").concat(email, "\">").concat(email, "</a>\n            </td>\n            <td class=\"py-2 align-middle\">\n              ").concat(date, "\n            </td>\n            <td class=\"py-2 align-middle white-space-nowrap\">\n              ").concat(address, "\n              <p class=\"mb-0 text-500\">").concat(shippingType, "</p>\n            </td>\n            <td class=\"py-2 align-middle text-center fs-0 white-space-nowrap\">\n              <span class=\"badge rounded-pill d-block badge-subtle-").concat(badge.type, "\">\n                ").concat(status, "\n                <span class=\"ms-1 ").concat(badge.icon, "\" data-fa-transform=\"shrink-2\"></span>\n              </span>\n            </td>\n            <td class=\"py-2 align-middle text-end fs-0 fw-medium\">\n              ").concat(amount, "\n            </td>\n            <td class=\"py-2 align-middle white-space-nowrap text-end\">\n              <div class=\"dropstart font-sans-serif position-static d-inline-block\">\n                <button class=\"btn btn-link text-600 btn-sm dropdown-toggle btn-reveal\" type='button' id=\"order-dropdown-").concat(id, "\" data-bs-toggle=\"dropdown\" data-boundary=\"window\" aria-haspopup=\"true\" aria-expanded=\"false\" data-bs-reference=\"parent\">\n                  <span class=\"fas fa-ellipsis-h fs--1\"></span>\n                </button>\n                <div class=\"dropdown-menu dropdown-menu-end border py-2\" aria-labelledby=\"order-dropdown-").concat(id, "\">\n                  <a href=\"#!\" class=\"dropdown-item\">View</a>\n                  <a href=\"#!\" class=\"dropdown-item\">Edit</a>\n                  <a href=\"#!\" class=\"dropdown-item\">Refund</a>\n                  <div class\"dropdown-divider\"></div>\n                  <a href=\"#!\" class=\"dropdown-item text-warning\">Archive</a>\n                  <a href=\"#!\" class=\"dropdown-item text-warning\">Archive</a>\n                </div>\n              </div>\n            </td>\n          </tr>\n        ");
       }
     };
     var paginationButtonNext = table.querySelector('[data-list-pagination="next"]');
@@ -5496,7 +5496,7 @@ var upcomingMonthNumber = window.dayjs && window.dayjs().add(1, 'month').format(
 var upcomingMonthName = window.dayjs && window.dayjs().format('MMM');
 var thisYear = window.dayjs && window.dayjs().format('YYYY');
 var managementEvents = [{
-  title: 'Monthly team meeting for Falcon React Project',
+  title: 'Monthly team meeting for Core&Outline React Project',
   start: "".concat(thisYear, "-").concat(thisMonthNumber, "-07"),
   end: "".concat(thisYear, "-").concat(thisMonthNumber, "-09"),
   startTime: "07 ".concat(thisMonthName, ", ").concat(thisYear),
@@ -5919,566 +5919,6 @@ var trendingKeywordsInit = function trendingKeywordsInit() {
 };
 
 /* -------------------------------------------------------------------------- */
-/*                                  bar-chart                                 */
-/* -------------------------------------------------------------------------- */
-
-var barChartInit = function barChartInit() {
-  var barChartElement = document.getElementById('chartjs-bar-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'bar',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 6, 3],
-          backgroundColor: [utils.rgbaColor(utils.getColor('secondary'), 0.2), utils.rgbaColor(utils.getColor('warning'), 0.2), utils.rgbaColor(utils.getColor('info'), 0.2), utils.rgbaColor(utils.getColor('success'), 0.2), utils.rgbaColor(utils.getColor('info'), 0.2), utils.rgbaColor(utils.getColor('primary'), 0.2)],
-          borderColor: [utils.getColor('secondary'), utils.getColor('warning'), utils.getColor('info'), utils.getColor('success'), utils.getColor('info'), utils.getColor('primary')],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        plugins: {
-          tooltip: chartJsDefaultTooltip()
-        },
-        scales: {
-          x: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          },
-          y: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1),
-              drawBorder: true
-            }
-          }
-        }
-      }
-    };
-  };
-  chartJsInit(barChartElement, getOptions);
-};
-
-/* eslint-disable */
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Bubble                                    */
-/* -------------------------------------------------------------------------- */
-
-var chartBubble = function chartBubble() {
-  var pie = document.getElementById('chartjs-bubble-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'bubble',
-      data: {
-        datasets: [{
-          label: 'Dataset 1',
-          data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSubtleColors()['primary'],
-          hoverBackgroundColor: utils.getColors()['primary']
-        }, {
-          label: 'Dataset 2',
-          data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSubtleColors()['success'],
-          hoverBackgroundColor: utils.getColors()['success']
-        }, {
-          label: 'Dataset 3',
-          data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSubtleColors()['danger'],
-          hoverBackgroundColor: utils.getColors()['danger']
-        }]
-      },
-      options: {
-        plugins: {
-          legend: {
-            position: 'top'
-          },
-          tooltip: chartJsDefaultTooltip()
-        },
-        scales: {
-          x: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays()['black'], 0.1)
-            }
-          },
-          y: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays()['black'], 0.1)
-            }
-          }
-        }
-      }
-    };
-  };
-  chartJsInit(pie, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Combo                                  */
-/* -------------------------------------------------------------------------- */
-var chartCombo = function chartCombo() {
-  var combo = document.getElementById('chartjs-combo-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'bar',
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          type: 'line',
-          label: 'Dataset 1',
-          borderColor: utils.getColor('primary'),
-          borderWidth: 2,
-          fill: false,
-          data: [55, 80, -60, -22, -50, 40, 90]
-        }, {
-          type: 'bar',
-          label: 'Dataset 2',
-          backgroundColor: utils.getSubtleColors().danger,
-          data: [4, -80, 90, -22, 70, 35, -50],
-          borderWidth: 1
-        }, {
-          type: 'bar',
-          label: 'Dataset 3',
-          backgroundColor: utils.getSubtleColors().primary,
-          data: [-30, 30, -18, 100, -45, -25, -50],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        maintainAspectRatio: false,
-        plugins: {
-          tooltip: chartJsDefaultTooltip()
-        },
-        scales: {
-          x: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          },
-          y: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          }
-        }
-      }
-    };
-  };
-  chartJsInit(combo, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Doughnut                                  */
-/* -------------------------------------------------------------------------- */
-var chartDoughnut = function chartDoughnut() {
-  var doughnut = document.getElementById('chartjs-doughnut-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          data: [5, 3, 2, 1, 1],
-          backgroundColor: [utils.rgbaColor(utils.getColor('facebook'), 0.2), utils.rgbaColor(utils.getColor('youtube'), 0.2), utils.rgbaColor(utils.getColor('twitter'), 0.2), utils.rgbaColor(utils.getColor('linkedin'), 0.2), utils.rgbaColor(utils.getColor('github'), 0.2)],
-          borderWidth: 1,
-          borderColor: [utils.getColor('facebook'), utils.getColor('youtube'), utils.getColor('twitter'), utils.getColor('linkedin'), utils.getColor('github')]
-        }],
-        labels: ['Facebook', 'Youtube', 'Twitter', 'Linkedin', 'GitHub']
-      },
-      options: {
-        plugins: {
-          tooltip: chartJsDefaultTooltip()
-        },
-        maintainAspectRatio: false
-      }
-    };
-  };
-  chartJsInit(doughnut, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Half Doughnut                             */
-/* -------------------------------------------------------------------------- */
-var chartHalfDoughnutInit = function chartHalfDoughnutInit() {
-  var $chartHalfDoughnuts = document.querySelectorAll('[data-half-doughnut]');
-  $chartHalfDoughnuts.forEach(function ($chartHalfDoughnut) {
-    if ($chartHalfDoughnut) {
-      var getOptions = function getOptions() {
-        var userOptions = utils.getData($chartHalfDoughnut, 'half-doughnut');
-        var defaultOptions = {
-          type: 'doughnut',
-          data: {
-            labels: ['Reached', 'Target'],
-            datasets: [{
-              data: [50, 50],
-              backgroundColor: ['primary', 'gray-300'],
-              borderWidth: [0, 0, 0, 0]
-            }]
-          },
-          options: {
-            rotation: -90,
-            circumference: '180',
-            cutout: '80%',
-            hover: {
-              mode: null
-            },
-            plugins: {
-              legend: {
-                display: false
-              },
-              tooltip: {
-                enabled: false
-              }
-            }
-          }
-        };
-        var options = window._.merge(defaultOptions, userOptions);
-        var mergedDatasets = options.data.datasets[0];
-        mergedDatasets.backgroundColor = [utils.getColor(mergedDatasets.backgroundColor[0]), utils.getColor(mergedDatasets.backgroundColor[1])];
-        return options;
-      };
-      chartJsInit($chartHalfDoughnut, getOptions);
-    }
-  });
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Line                                  */
-/* -------------------------------------------------------------------------- */
-var chartLine = function chartLine() {
-  var line = document.getElementById('chartjs-line-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'bar',
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          type: 'line',
-          label: 'Dataset 1',
-          borderColor: utils.getColor('primary'),
-          borderWidth: 2,
-          fill: false,
-          data: [55, 80, 60, 22, 50, 40, 90],
-          tension: 0.3
-        }]
-      },
-      options: {
-        plugins: {
-          tooltip: chartJsDefaultTooltip()
-        },
-        scales: {
-          x: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          },
-          y: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          }
-        }
-      }
-    };
-  };
-  chartJsInit(line, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Pie                                  */
-/* -------------------------------------------------------------------------- */
-var chartPie = function chartPie() {
-  var pie = document.getElementById('chartjs-pie-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'pie',
-      data: {
-        datasets: [{
-          data: [5, 3, 2, 1, 1],
-          backgroundColor: [utils.rgbaColor(utils.getColor('facebook'), 0.75), utils.rgbaColor(utils.getColor('youtube'), 0.75), utils.rgbaColor(utils.getColor('twitter'), 0.75), utils.rgbaColor(utils.getColor('linkedin'), 0.75), utils.rgbaColor(utils.getColor('github'), 0.75)],
-          borderWidth: 1,
-          borderColor: utils.getGrays()['100']
-        }],
-        labels: ['Facebook', 'Youtube', 'Twitter', 'Linkedin', 'GitHub']
-      },
-      options: {
-        plugins: {
-          tooltip: chartJsDefaultTooltip()
-        },
-        maintainAspectRatio: false
-      }
-    };
-  };
-  chartJsInit(pie, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Polar                                  */
-/* -------------------------------------------------------------------------- */
-var chartPolar = function chartPolar() {
-  var polar = document.getElementById('chartjs-polar-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'polarArea',
-      data: {
-        datasets: [{
-          data: [10, 20, 50, 40, 30],
-          backgroundColor: [utils.rgbaColor(utils.getColor('facebook'), 0.5), utils.rgbaColor(utils.getColor('youtube'), 0.5), utils.rgbaColor(utils.getColor('twitter'), 0.5), utils.rgbaColor(utils.getColor('linkedin'), 0.5), utils.rgbaColor(utils.getColor('success'), 0.5)],
-          borderWidth: 1,
-          borderColor: utils.getGrays()['400']
-        }],
-        labels: ['Facebook', 'Youtube', 'Twitter', 'Linkedin', 'Medium']
-      },
-      options: {
-        plugins: {
-          tooltip: chartJsDefaultTooltip()
-        },
-        maintainAspectRatio: false,
-        scales: {
-          r: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          }
-        }
-      }
-    };
-  };
-  chartJsInit(polar, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Radar                                  */
-/* -------------------------------------------------------------------------- */
-var chartRadar = function chartRadar() {
-  var radar = document.getElementById('chartjs-radar-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'radar',
-      data: {
-        labels: ['English', 'Maths', 'Physics', 'Chemistry', 'Biology', 'History'],
-        datasets: [{
-          label: 'Student A',
-          backgroundColor: utils.rgbaColor(utils.getColor('success'), 0.5),
-          data: [65, 75, 70, 80, 60, 80],
-          borderWidth: 1
-        }, {
-          label: 'Student B',
-          backgroundColor: utils.rgbaColor(utils.getColor('primary'), 0.5),
-          data: [54, 65, 60, 70, 70, 75],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        plugins: {
-          tooltip: chartJsDefaultTooltip()
-        },
-        maintainAspectRatio: false,
-        scales: {
-          r: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          }
-        }
-      }
-    };
-  };
-  chartJsInit(radar, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Scatter                                   */
-/* -------------------------------------------------------------------------- */
-var chartScatter = function chartScatter() {
-  var scatter = document.getElementById('chartjs-scatter-chart');
-  var getOptions = function getOptions() {
-    return {
-      type: 'scatter',
-      data: {
-        datasets: [{
-          label: 'Dataset one',
-          data: [{
-            x: -98,
-            y: 42
-          }, {
-            x: -85,
-            y: -29
-          }, {
-            x: -87,
-            y: -70
-          }, {
-            x: -53,
-            y: 28
-          }, {
-            x: -29,
-            y: 4
-          }, {
-            x: -2,
-            y: -42
-          }, {
-            x: 5,
-            y: 3
-          }, {
-            x: 39,
-            y: 19
-          }, {
-            x: 49,
-            y: 79
-          }, {
-            x: 83,
-            y: -9
-          }, {
-            x: 93,
-            y: 12
-          }],
-          pointBackgroundColor: utils.getColor('primary'),
-          borderColor: utils.getColor('primary'),
-          borderWidth: 1
-        }, {
-          label: 'Dataset Two',
-          data: [{
-            x: 53,
-            y: 12
-          }, {
-            x: -78,
-            y: 42
-          }, {
-            x: -65,
-            y: -39
-          }, {
-            x: -57,
-            y: -20
-          }, {
-            x: 57,
-            y: 28
-          }, {
-            x: -35,
-            y: 75
-          }, {
-            x: -29,
-            y: -43
-          }, {
-            x: 15,
-            y: 31
-          }, {
-            x: 97,
-            y: 19
-          }, {
-            x: 49,
-            y: 69
-          }, {
-            x: 33,
-            y: -57
-          }],
-          pointBackgroundColor: utils.getColor('warning'),
-          borderColor: utils.getColor('warning'),
-          borderWidth: 1,
-          borderRadius: '50%'
-        }]
-      },
-      options: {
-        plugins: {
-          tooltip: chartJsDefaultTooltip()
-        },
-        scales: {
-          x: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          },
-          y: {
-            grid: {
-              color: utils.rgbaColor(utils.getGrays().black, 0.1)
-            }
-          }
-        },
-        animation: {
-          duration: 2000
-        }
-      }
-    };
-  };
-  chartJsInit(scatter, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
-/*                            ChartJs Initialization                          */
-/* -------------------------------------------------------------------------- */
-
-var chartJsInit = function chartJsInit(chartEl, config) {
-  if (!chartEl) return;
-  var ctx = chartEl.getContext('2d');
-  var chart = new window.Chart(ctx, config());
-  var themeController = document.body;
-  themeController.addEventListener('clickControl', function (_ref14) {
-    var control = _ref14.detail.control;
-    if (control === 'theme') {
-      chart.destroy();
-      chart = new window.Chart(ctx, config());
-    }
-    return null;
-  });
-};
-var chartJsDefaultTooltip = function chartJsDefaultTooltip() {
-  return {
-    backgroundColor: utils.getGrays()['100'],
-    borderColor: utils.getGrays()['300'],
-    borderWidth: 1,
-    titleColor: utils.getGrays().black,
-    callbacks: {
-      labelTextColor: function labelTextColor() {
-        return utils.getGrays().black;
-      }
-    }
-  };
-};
-var getBubbleDataset = function getBubbleDataset(count, rmin, rmax, min, max) {
-  var arr = Array.from(Array(count).keys());
-  return arr.map(function () {
-    return {
-      x: utils.getRandomNumber(min, max),
-      y: utils.getRandomNumber(min, max),
-      r: utils.getRandomNumber(rmin, rmax)
-    };
-  });
-};
-
-/* eslint-disable */
-
-/* -------------------------------------------------------------------------- */
-/*                            Chart Scatter                                   */
-/* -------------------------------------------------------------------------- */
-var productShareDoughnutInit = function productShareDoughnutInit() {
-  var marketShareDoughnutElement = document.getElementById('marketShareDoughnut');
-  var getOptions = function getOptions() {
-    return {
-      type: 'doughnut',
-      data: {
-        labels: ['Flacon', 'Sparrow'],
-        datasets: [{
-          data: [50, 88],
-          backgroundColor: [utils.getColor('primary'), utils.getColor('gray-300')],
-          borderColor: [utils.getColor('primary'), utils.getColor('gray-300')]
-        }]
-      },
-      options: {
-        tooltips: chartJsDefaultTooltip(),
-        rotation: -90,
-        circumference: '180',
-        cutout: '80%',
-        plugins: {
-          legend: {
-            display: false
-          }
-        }
-      }
-    };
-  };
-  chartJsInit(marketShareDoughnutElement, getOptions);
-};
-
-/* -------------------------------------------------------------------------- */
 /*                             Echarts Active Users                           */
 /* -------------------------------------------------------------------------- */
 
@@ -6866,10 +6306,10 @@ var audienceChartInit = function audienceChartInit() {
 var avgEnrollmentRateInit = function avgEnrollmentRateInit() {
   var $echartsLineAvgEnrollmentLms = document.querySelector('.echart-avg-enrollment-rate');
   function getFormatter(params) {
-    return params.map(function (_ref15) {
-      var seriesName = _ref15.seriesName,
-        value = _ref15.value,
-        borderColor = _ref15.borderColor;
+    return params.map(function (_ref14) {
+      var seriesName = _ref14.seriesName,
+        value = _ref14.value,
+        borderColor = _ref14.borderColor;
       return "<span class= \"fas fa-circle fs--2\" style=\"color: ".concat(borderColor, "\"></span>\n            <span class='text-600'>\n              ").concat(seriesName, " : <strong>").concat(value, "</strong>\n            </span>");
     }).join('<br/>');
   }
@@ -7374,10 +6814,10 @@ var browsedCoursesInit = function browsedCoursesInit() {
   var $echartsBrowsedCourses = document.querySelector('.echart-browsed-courses');
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var tooltipFormatter = function tooltipFormatter(params) {
-    return "\n    <div>\n      <p class='mb-2 text-600'>\n      ".concat(window.dayjs(params[0].axisValue).isValid() ? window.dayjs(params[0].axisValue).format('MMMM YYYY') : params[0].axisValue, "\n      </p>\n      ").concat(params.map(function (_ref16) {
-      var seriesName = _ref16.seriesName,
-        value = _ref16.value,
-        borderColor = _ref16.borderColor;
+    return "\n    <div>\n      <p class='mb-2 text-600'>\n      ".concat(window.dayjs(params[0].axisValue).isValid() ? window.dayjs(params[0].axisValue).format('MMMM YYYY') : params[0].axisValue, "\n      </p>\n      ").concat(params.map(function (_ref15) {
+      var seriesName = _ref15.seriesName,
+        value = _ref15.value,
+        borderColor = _ref15.borderColor;
       return "<span class= \"fas fa-circle fs--2\" style=\"color: ".concat(borderColor, "\"></span>\n            <span class='text-600'>\n              ").concat(seriesName, " : <strong>").concat(value, "</strong>\n            </span>");
     }).join('<br />'), "\n    </div>");
   };
@@ -7798,7 +7238,7 @@ var closedVsGoalInit = function closedVsGoalInit() {
         },
         series: [{
           type: 'line',
-          name: 'Closed Amount',
+          name: 'Paid Account',
           data: [0, 5000, 18000, 40000, 58000, 65000, 90000, 110000, 140000],
           symbolSize: 5,
           symbol: 'circle',
@@ -7813,7 +7253,7 @@ var closedVsGoalInit = function closedVsGoalInit() {
           }
         }, {
           type: 'line',
-          name: 'Revenue Date',
+          name: 'Trial Periods',
           data: [0, 10000, 24000, 35000, 45000, 53000, 57000, 68000, 79000],
           symbolSize: 5,
           symbol: 'circle',
@@ -8494,8 +7934,8 @@ var echartSetOption = function echartSetOption(chart, userOptions, getDefaultOpt
   var themeController = document.body;
   // Merge user options with lodash
   chart.setOption(window._.merge(getDefaultOptions(), userOptions));
-  themeController.addEventListener('clickControl', function (_ref17) {
-    var control = _ref17.detail.control;
+  themeController.addEventListener('clickControl', function (_ref16) {
+    var control = _ref16.detail.control;
     if (control === 'theme') {
       chart.setOption(window._.merge(getDefaultOptions(), userOptions));
     }
@@ -9708,7 +9148,7 @@ var marketShareEcommerceInit = function marketShareEcommerceInit() {
           },
           data: [{
             value: 5300000,
-            name: 'Falcon'
+            name: 'Core&Outline'
           }, {
             value: 1900000,
             name: 'Sparrow'
@@ -9786,7 +9226,7 @@ var marketShareInit = function marketShareInit() {
           },
           data: [{
             value: 5300000,
-            name: 'Samsung'
+            name: 'Tala'
           }, {
             value: 1900000,
             name: 'Huawei'
@@ -12065,7 +11505,7 @@ var topProductsInit = function topProductsInit() {
   var ECHART_BAR_TOP_PRODUCTS = '.echart-bar-top-products';
   var $echartBarTopProducts = document.querySelector(ECHART_BAR_TOP_PRODUCTS);
   if ($echartBarTopProducts) {
-    var data = [['product', '2019', '2018'], ['Boots4', 43, 85], ['Reign Pro', 83, 73], ['Slick', 86, 62], ['Falcon', 72, 53], ['Sparrow', 80, 50], ['Hideway', 50, 70], ['Freya', 80, 90]];
+    var data = [['ProductA', '2019', '2018'], ['ProductBs', 43, 85], ['ProductD', 83, 73], ['ProductC', 86, 62], ['ProductE', 72, 53]];
     var userOptions = utils.getData($echartBarTopProducts, 'options');
     var chart = window.echarts.init($echartBarTopProducts);
     var getDefaultOptions = function getDefaultOptions() {
@@ -12313,10 +11753,10 @@ var totalSalesEcommerce = function totalSalesEcommerce() {
   var $echartsLineTotalSalesEcomm = document.querySelector(ECHART_LINE_TOTAL_SALES_ECOMM);
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   function getFormatter(params) {
-    return params.map(function (_ref18) {
-      var value = _ref18.value,
-        borderColor = _ref18.borderColor,
-        seriesName = _ref18.seriesName;
+    return params.map(function (_ref17) {
+      var value = _ref17.value,
+        borderColor = _ref17.borderColor,
+        seriesName = _ref17.seriesName;
       return "<span class= \"fas fa-circle\" style=\"color: ".concat(borderColor, "\"></span>\n    <span class='text-600'>").concat(seriesName === 'lastMonth' ? 'Last Month' : 'Previous Year', ": ").concat(value, "</span>");
     }).join('<br/>');
   }
@@ -13887,6 +13327,566 @@ var weeklySalesInit = function weeklySalesInit() {
     };
     echartSetOption(chart, userOptions, getDefaultOptions);
   }
+};
+
+/* -------------------------------------------------------------------------- */
+/*                                  bar-chart                                 */
+/* -------------------------------------------------------------------------- */
+
+var barChartInit = function barChartInit() {
+  var barChartElement = document.getElementById('chartjs-bar-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 6, 3],
+          backgroundColor: [utils.rgbaColor(utils.getColor('secondary'), 0.2), utils.rgbaColor(utils.getColor('warning'), 0.2), utils.rgbaColor(utils.getColor('info'), 0.2), utils.rgbaColor(utils.getColor('success'), 0.2), utils.rgbaColor(utils.getColor('info'), 0.2), utils.rgbaColor(utils.getColor('primary'), 0.2)],
+          borderColor: [utils.getColor('secondary'), utils.getColor('warning'), utils.getColor('info'), utils.getColor('success'), utils.getColor('info'), utils.getColor('primary')],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          tooltip: chartJsDefaultTooltip()
+        },
+        scales: {
+          x: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          },
+          y: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1),
+              drawBorder: true
+            }
+          }
+        }
+      }
+    };
+  };
+  chartJsInit(barChartElement, getOptions);
+};
+
+/* eslint-disable */
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Bubble                                    */
+/* -------------------------------------------------------------------------- */
+
+var chartBubble = function chartBubble() {
+  var pie = document.getElementById('chartjs-bubble-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'bubble',
+      data: {
+        datasets: [{
+          label: 'Dataset 1',
+          data: getBubbleDataset(5, 5, 15, 0, 100),
+          backgroundColor: utils.getSubtleColors()['primary'],
+          hoverBackgroundColor: utils.getColors()['primary']
+        }, {
+          label: 'Dataset 2',
+          data: getBubbleDataset(5, 5, 15, 0, 100),
+          backgroundColor: utils.getSubtleColors()['success'],
+          hoverBackgroundColor: utils.getColors()['success']
+        }, {
+          label: 'Dataset 3',
+          data: getBubbleDataset(5, 5, 15, 0, 100),
+          backgroundColor: utils.getSubtleColors()['danger'],
+          hoverBackgroundColor: utils.getColors()['danger']
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            position: 'top'
+          },
+          tooltip: chartJsDefaultTooltip()
+        },
+        scales: {
+          x: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays()['black'], 0.1)
+            }
+          },
+          y: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays()['black'], 0.1)
+            }
+          }
+        }
+      }
+    };
+  };
+  chartJsInit(pie, getOptions);
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Combo                                  */
+/* -------------------------------------------------------------------------- */
+var chartCombo = function chartCombo() {
+  var combo = document.getElementById('chartjs-combo-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          type: 'line',
+          label: 'Dataset 1',
+          borderColor: utils.getColor('primary'),
+          borderWidth: 2,
+          fill: false,
+          data: [55, 80, -60, -22, -50, 40, 90]
+        }, {
+          type: 'bar',
+          label: 'Dataset 2',
+          backgroundColor: utils.getSubtleColors().danger,
+          data: [4, -80, 90, -22, 70, 35, -50],
+          borderWidth: 1
+        }, {
+          type: 'bar',
+          label: 'Dataset 3',
+          backgroundColor: utils.getSubtleColors().primary,
+          data: [-30, 30, -18, 100, -45, -25, -50],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        maintainAspectRatio: false,
+        plugins: {
+          tooltip: chartJsDefaultTooltip()
+        },
+        scales: {
+          x: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          },
+          y: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          }
+        }
+      }
+    };
+  };
+  chartJsInit(combo, getOptions);
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Doughnut                                  */
+/* -------------------------------------------------------------------------- */
+var chartDoughnut = function chartDoughnut() {
+  var doughnut = document.getElementById('chartjs-doughnut-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [5, 3, 2, 1, 1],
+          backgroundColor: [utils.rgbaColor(utils.getColor('facebook'), 0.2), utils.rgbaColor(utils.getColor('youtube'), 0.2), utils.rgbaColor(utils.getColor('twitter'), 0.2), utils.rgbaColor(utils.getColor('linkedin'), 0.2), utils.rgbaColor(utils.getColor('github'), 0.2)],
+          borderWidth: 1,
+          borderColor: [utils.getColor('facebook'), utils.getColor('youtube'), utils.getColor('twitter'), utils.getColor('linkedin'), utils.getColor('github')]
+        }],
+        labels: ['Facebook', 'Youtube', 'Twitter', 'Linkedin', 'GitHub']
+      },
+      options: {
+        plugins: {
+          tooltip: chartJsDefaultTooltip()
+        },
+        maintainAspectRatio: false
+      }
+    };
+  };
+  chartJsInit(doughnut, getOptions);
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Half Doughnut                             */
+/* -------------------------------------------------------------------------- */
+var chartHalfDoughnutInit = function chartHalfDoughnutInit() {
+  var $chartHalfDoughnuts = document.querySelectorAll('[data-half-doughnut]');
+  $chartHalfDoughnuts.forEach(function ($chartHalfDoughnut) {
+    if ($chartHalfDoughnut) {
+      var getOptions = function getOptions() {
+        var userOptions = utils.getData($chartHalfDoughnut, 'half-doughnut');
+        var defaultOptions = {
+          type: 'doughnut',
+          data: {
+            labels: ['Reached', 'Target'],
+            datasets: [{
+              data: [50, 50],
+              backgroundColor: ['primary', 'gray-300'],
+              borderWidth: [0, 0, 0, 0]
+            }]
+          },
+          options: {
+            rotation: -90,
+            circumference: '180',
+            cutout: '80%',
+            hover: {
+              mode: null
+            },
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                enabled: false
+              }
+            }
+          }
+        };
+        var options = window._.merge(defaultOptions, userOptions);
+        var mergedDatasets = options.data.datasets[0];
+        mergedDatasets.backgroundColor = [utils.getColor(mergedDatasets.backgroundColor[0]), utils.getColor(mergedDatasets.backgroundColor[1])];
+        return options;
+      };
+      chartJsInit($chartHalfDoughnut, getOptions);
+    }
+  });
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Line                                  */
+/* -------------------------------------------------------------------------- */
+var chartLine = function chartLine() {
+  var line = document.getElementById('chartjs-line-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          type: 'line',
+          label: 'Dataset 1',
+          borderColor: utils.getColor('primary'),
+          borderWidth: 2,
+          fill: false,
+          data: [55, 80, 60, 22, 50, 40, 90],
+          tension: 0.3
+        }]
+      },
+      options: {
+        plugins: {
+          tooltip: chartJsDefaultTooltip()
+        },
+        scales: {
+          x: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          },
+          y: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          }
+        }
+      }
+    };
+  };
+  chartJsInit(line, getOptions);
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Pie                                  */
+/* -------------------------------------------------------------------------- */
+var chartPie = function chartPie() {
+  var pie = document.getElementById('chartjs-pie-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: [5, 3, 2, 1, 1],
+          backgroundColor: [utils.rgbaColor(utils.getColor('facebook'), 0.75), utils.rgbaColor(utils.getColor('youtube'), 0.75), utils.rgbaColor(utils.getColor('twitter'), 0.75), utils.rgbaColor(utils.getColor('linkedin'), 0.75), utils.rgbaColor(utils.getColor('github'), 0.75)],
+          borderWidth: 1,
+          borderColor: utils.getGrays()['100']
+        }],
+        labels: ['Facebook', 'Youtube', 'Twitter', 'Linkedin', 'GitHub']
+      },
+      options: {
+        plugins: {
+          tooltip: chartJsDefaultTooltip()
+        },
+        maintainAspectRatio: false
+      }
+    };
+  };
+  chartJsInit(pie, getOptions);
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Polar                                  */
+/* -------------------------------------------------------------------------- */
+var chartPolar = function chartPolar() {
+  var polar = document.getElementById('chartjs-polar-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'polarArea',
+      data: {
+        datasets: [{
+          data: [10, 20, 50, 40, 30],
+          backgroundColor: [utils.rgbaColor(utils.getColor('facebook'), 0.5), utils.rgbaColor(utils.getColor('youtube'), 0.5), utils.rgbaColor(utils.getColor('twitter'), 0.5), utils.rgbaColor(utils.getColor('linkedin'), 0.5), utils.rgbaColor(utils.getColor('success'), 0.5)],
+          borderWidth: 1,
+          borderColor: utils.getGrays()['400']
+        }],
+        labels: ['Facebook', 'Youtube', 'Twitter', 'Linkedin', 'Medium']
+      },
+      options: {
+        plugins: {
+          tooltip: chartJsDefaultTooltip()
+        },
+        maintainAspectRatio: false,
+        scales: {
+          r: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          }
+        }
+      }
+    };
+  };
+  chartJsInit(polar, getOptions);
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Radar                                  */
+/* -------------------------------------------------------------------------- */
+var chartRadar = function chartRadar() {
+  var radar = document.getElementById('chartjs-radar-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'radar',
+      data: {
+        labels: ['English', 'Maths', 'Physics', 'Chemistry', 'Biology', 'History'],
+        datasets: [{
+          label: 'Student A',
+          backgroundColor: utils.rgbaColor(utils.getColor('success'), 0.5),
+          data: [65, 75, 70, 80, 60, 80],
+          borderWidth: 1
+        }, {
+          label: 'Student B',
+          backgroundColor: utils.rgbaColor(utils.getColor('primary'), 0.5),
+          data: [54, 65, 60, 70, 70, 75],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          tooltip: chartJsDefaultTooltip()
+        },
+        maintainAspectRatio: false,
+        scales: {
+          r: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          }
+        }
+      }
+    };
+  };
+  chartJsInit(radar, getOptions);
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Scatter                                   */
+/* -------------------------------------------------------------------------- */
+var chartScatter = function chartScatter() {
+  var scatter = document.getElementById('chartjs-scatter-chart');
+  var getOptions = function getOptions() {
+    return {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'Dataset one',
+          data: [{
+            x: -98,
+            y: 42
+          }, {
+            x: -85,
+            y: -29
+          }, {
+            x: -87,
+            y: -70
+          }, {
+            x: -53,
+            y: 28
+          }, {
+            x: -29,
+            y: 4
+          }, {
+            x: -2,
+            y: -42
+          }, {
+            x: 5,
+            y: 3
+          }, {
+            x: 39,
+            y: 19
+          }, {
+            x: 49,
+            y: 79
+          }, {
+            x: 83,
+            y: -9
+          }, {
+            x: 93,
+            y: 12
+          }],
+          pointBackgroundColor: utils.getColor('primary'),
+          borderColor: utils.getColor('primary'),
+          borderWidth: 1
+        }, {
+          label: 'Dataset Two',
+          data: [{
+            x: 53,
+            y: 12
+          }, {
+            x: -78,
+            y: 42
+          }, {
+            x: -65,
+            y: -39
+          }, {
+            x: -57,
+            y: -20
+          }, {
+            x: 57,
+            y: 28
+          }, {
+            x: -35,
+            y: 75
+          }, {
+            x: -29,
+            y: -43
+          }, {
+            x: 15,
+            y: 31
+          }, {
+            x: 97,
+            y: 19
+          }, {
+            x: 49,
+            y: 69
+          }, {
+            x: 33,
+            y: -57
+          }],
+          pointBackgroundColor: utils.getColor('warning'),
+          borderColor: utils.getColor('warning'),
+          borderWidth: 1,
+          borderRadius: '50%'
+        }]
+      },
+      options: {
+        plugins: {
+          tooltip: chartJsDefaultTooltip()
+        },
+        scales: {
+          x: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          },
+          y: {
+            grid: {
+              color: utils.rgbaColor(utils.getGrays().black, 0.1)
+            }
+          }
+        },
+        animation: {
+          duration: 2000
+        }
+      }
+    };
+  };
+  chartJsInit(scatter, getOptions);
+};
+
+/* -------------------------------------------------------------------------- */
+/*                            ChartJs Initialization                          */
+/* -------------------------------------------------------------------------- */
+
+var chartJsInit = function chartJsInit(chartEl, config) {
+  if (!chartEl) return;
+  var ctx = chartEl.getContext('2d');
+  var chart = new window.Chart(ctx, config());
+  var themeController = document.body;
+  themeController.addEventListener('clickControl', function (_ref18) {
+    var control = _ref18.detail.control;
+    if (control === 'theme') {
+      chart.destroy();
+      chart = new window.Chart(ctx, config());
+    }
+    return null;
+  });
+};
+var chartJsDefaultTooltip = function chartJsDefaultTooltip() {
+  return {
+    backgroundColor: utils.getGrays()['100'],
+    borderColor: utils.getGrays()['300'],
+    borderWidth: 1,
+    titleColor: utils.getGrays().black,
+    callbacks: {
+      labelTextColor: function labelTextColor() {
+        return utils.getGrays().black;
+      }
+    }
+  };
+};
+var getBubbleDataset = function getBubbleDataset(count, rmin, rmax, min, max) {
+  var arr = Array.from(Array(count).keys());
+  return arr.map(function () {
+    return {
+      x: utils.getRandomNumber(min, max),
+      y: utils.getRandomNumber(min, max),
+      r: utils.getRandomNumber(rmin, rmax)
+    };
+  });
+};
+
+/* eslint-disable */
+
+/* -------------------------------------------------------------------------- */
+/*                            Chart Scatter                                   */
+/* -------------------------------------------------------------------------- */
+var productShareDoughnutInit = function productShareDoughnutInit() {
+  var marketShareDoughnutElement = document.getElementById('marketShareDoughnut');
+  var getOptions = function getOptions() {
+    return {
+      type: 'doughnut',
+      data: {
+        labels: ['Flacon', 'Sparrow'],
+        datasets: [{
+          data: [50, 88],
+          backgroundColor: [utils.getColor('primary'), utils.getColor('gray-300')],
+          borderColor: [utils.getColor('primary'), utils.getColor('gray-300')]
+        }]
+      },
+      options: {
+        tooltips: chartJsDefaultTooltip(),
+        rotation: -90,
+        circumference: '180',
+        cutout: '80%',
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+    };
+  };
+  chartJsInit(marketShareDoughnutElement, getOptions);
 };
 
 /* -------------------------------------------------------------------------- */

@@ -34,6 +34,14 @@ mixin CardAudience
               .d-flex.align-items-center
                 span.fas.fa-caret-down.text-warning
                 h6.fs--2.mb-0.ms-2.text-warning 32.2%
+        li.nav-item(role='presentation')
+          a.nav-link.mb-0#duration-tab(data-bs-toggle='tab' href='#duration' role='tab' aria-controls='duration' aria-selected='false')
+            .audience-tab-item.p-2.pe-4
+              h6.text-800.fs--2.text-nowrap Click Through Rate
+              h5.text-800 157k
+              .d-flex.align-items-center
+                span.fas.fa-caret-up.text-success
+                h6.fs--2.mb-0.ms-2.text-success 12.2%
     .card-body
       .tab-content
         .tab-pane.active#users(role='tabpanel' aria-labelledby='users-tab')
@@ -66,6 +74,6 @@ mixin CardConnect
         .col
           .row.align-items-center
             .col.col-lg-8
-              h5.fs-0.mb-3.mb-sm-0.text-primary Connect your domain to your website and get things done faster with Falcon
+              h5.fs-0.mb-3.mb-sm-0.text-primary Connect your domain to your website and get things done faster with Core&Outline
             .col-12.col-sm-auto.ms-auto
               button.btn.btn-falcon-primary(type="button") Connect

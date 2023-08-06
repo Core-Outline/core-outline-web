@@ -115,7 +115,7 @@ $btn-reveal-color-dark: dark !default;
 $btn-reveal-bg-dark: shade-color($dark, 10%) !default;
 $btn-reveal-border-color-dark: shade-color($dark, 12.5%) !default;
 
-/* ------------------------------ Falcon Button ----------------------------- */
+/* ------------------------------ Core&Outline Button ----------------------------- */
 
 $btn-falcon-background-dark: var(--#{$prefix}body-bg) !default;
 $btn-disabled-color-dark: #4d5969 !default;
@@ -212,7 +212,7 @@ $scrollbar-bg-dark: rgba($gray-900, 0.6) !default;
 $simplebar-bg-dark: rgba($gray-400, 0.6) !default;
 
 
-/* ------------------------------- Falcon Pill ------------------------------ */
+/* ------------------------------- Core&Outline Pill ------------------------------ */
 $nav-pills-falcon-active-bg-color-dark: map-get($dark-grays, '100') !default;
 
 /* ------------------------------- Custom disabled button ------------------------------ */

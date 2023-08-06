@@ -24,7 +24,7 @@ include ../home/dashboard/Mixins
 include ../home/project-management/CardProjectStatistics
 
 include ../home/saas/CandleChart
-include ../home/saas/GrossRevenueCard
+//- include ../home/saas/GrossRevenueCard
 include ../home/saas/SaasStatsticsCards
 
 include ../e-learning/StudentOverview
@@ -42,15 +42,15 @@ mixin Stats
   
   .row.g-3.mb-3
     .col-md-6.col-lg-4.col-xl-6.col-xxl-4
-      +CardWeeklySales
+      +CardMonthlyRecurringRevenue
     .col-md-6.col-lg-4.col-xl-6.col-xxl-4
-      +CardTotalOrder
+      +CardRevenueGrowthRate
     .col-md-6.col-lg-4.col-xl-6.col-xxl-4
       +CardMarketShare
     .col-md-6.col-lg-4.col-xl-6.col-xxl-4
       +CardProductShare.h-100
     .col-lg-8.col-xl-12.col-xxl-8
-      +CardStorage.h-100
+      +CardProductRevenueShare.h-100
   
   .row.g-3.mb-3
     .col-md-4
@@ -67,7 +67,7 @@ mixin Stats
     .col-xxl-8
       +CardPaymentChart.h-100.mb-3
     .col-xxl-4.col-md-6
-      +CardBandWidthSaved.h-100
+      +CardRevenueGrowth.h-100
     .col-xxl-4.col-md-6
       +CardActiveUserChart
     .col-xxl-8

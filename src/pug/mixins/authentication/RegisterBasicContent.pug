@@ -14,13 +14,21 @@ mixin RegisterBasicContent
     linkText: 'Login',
     link: 'simple/login.html'
   }).mb-2
+  script.
+    var currentPage = 'company_details'; 
 
-  +RegisterForm({
-    name: { attrs: { placeholder: 'Name' } },
+  +RegisterForm(currentPage, {
+    companyName: { attrs: { placeholder: 'Company Name', id: "name"} },
+    contactEmail: { attrs: { placeholder: 'Contact Email' } },
+    location: { attrs: { placeholder: 'Location' } },
+    industry: { attrs: { placeholder: 'Industry: advertising, agriculture, hospitality etc.' } },
+    employeeCount: { attrs: { placeholder: 'Number of Employees' } },
+    name: { attrs: { placeholder: 'Namesa' } },
     email: { attrs: { placeholder: 'Email address' } },
     password: { attrs: { placeholder: 'Password' } },
     confirmPassword: { attrs: { placeholder: 'Confirm Password' } },
     checkbox: { attrs: { id: 'basic-register-checkbox' } },
+    
   })
   +SocialButtons({
     title: 'register'

@@ -190,8 +190,7 @@ const orders = [
     name: 'Simeon Harber',
     email: 'simeon@example.com',
     date: '27/04/2019',
-    address:
-      'Simeon Harber, 702 Kunde Plain Apt. 634 East Bridgetview, HI 13134-1862',
+    address: 'Simeon Harber, 702 Kunde Plain Apt. 634 East Bridgetview, HI 13134-1862',
     shippingType: 'Via Free Shipping',
     status: 'On Hold',
     badge: { type: 'secondary', icon: 'fas fa-ban' },
@@ -219,8 +218,7 @@ const orders = [
     name: 'Ashley Kirlin',
     email: 'ashley@example.com',
     date: '26/04/2019',
-    address:
-      'Ashley Kirlin, 43304 Prosacco Shore South Dejuanfurt, MO 18623-0505',
+    address: 'Ashley Kirlin, 43304 Prosacco Shore South Dejuanfurt, MO 18623-0505',
     shippingType: 'Via Link Road',
     status: 'Processing',
     badge: { type: 'primary', icon: 'fas fa-redo' },
@@ -234,8 +232,7 @@ const orders = [
     name: 'Johnnie Considine',
     email: 'johnnie@example.com',
     date: '26/04/2019',
-    address:
-      'Johnnie Considine, 6008 Hermann Points Suite 294 Hansenville, TN 14210',
+    address: 'Johnnie Considine, 6008 Hermann Points Suite 294 Hansenville, TN 14210',
     shippingType: 'Via Flat Rate',
     status: 'Pending',
     badge: { type: 'warning', icon: 'fas fa-stream' },
@@ -277,8 +274,7 @@ const orders = [
     name: 'Daisha Howe',
     email: 'howe@example.com',
     date: '25/04/2019',
-    address:
-      'Daisha Howe, 829 Lavonne Valley Apt. 074 Stehrfort, RI 77914-0379',
+    address: 'Daisha Howe, 829 Lavonne Valley Apt. 074 Stehrfort, RI 77914-0379',
     shippingType: 'Via Free Shipping',
     status: 'Completed',
     badge: { type: 'success', icon: 'fas fa-check' },
@@ -320,8 +316,7 @@ const orders = [
     name: "Ellie O'Reilly",
     email: 'ellie@example.com',
     date: '24/04/2019',
-    address:
-      "Ellie O'Reilly, 1478 Kaitlin Haven Apt. 061 Lake Muhammadmouth, SC 35848",
+    address: "Ellie O'Reilly, 1478 Kaitlin Haven Apt. 061 Lake Muhammadmouth, SC 35848",
     shippingType: 'Via Free Shipping',
     status: 'Completed',
     badge: { type: 'success', icon: 'fas fa-check' },
@@ -377,8 +372,7 @@ const orders = [
     name: 'Lucienne Blick',
     email: 'blick@example.com',
     date: '23/04/2019',
-    address:
-      'Lucienne Blick, 6757 Giuseppe Meadows Geraldinemouth, MO 48819-4970',
+    address: 'Lucienne Blick, 6757 Giuseppe Meadows Geraldinemouth, MO 48819-4970',
     shippingType: 'Via Flat Rate',
     status: 'On Hold',
     badge: { type: 'secondary', icon: 'fas fa-ban' },
@@ -406,8 +400,7 @@ const orders = [
     name: 'Brandon Bednar',
     email: 'bednar@example.com',
     date: '22/04/2019',
-    address:
-      'Brandon Bednar, 25156 Isaac Crossing Apt. 810 Lonborough, CO 83774-5999',
+    address: 'Brandon Bednar, 25156 Isaac Crossing Apt. 810 Lonborough, CO 83774-5999',
     shippingType: 'Via Flat Rate',
     status: 'On Hold',
     badge: { type: 'secondary', icon: 'fas fa-ban' },
@@ -443,23 +436,13 @@ const advanceAjaxTableInit = () => {
       pagination: {
         item: "<li><button class='page' type='button'></button></li>"
       },
-      item: values => {
-        const {
-          orderId,
-          id,
-          name,
-          email,
-          date,
-          address,
-          shippingType,
-          status,
-          badge,
-          amount
-        } = values;
+      item: (values) => {
+        const { orderId, id, name, email, date, address, shippingType, status, badge, amount } =
+          values;
         return `
           <tr class="btn-reveal-trigger">
             <td class="order py-2 align-middle white-space-nowrap">
-              <a href="https://prium.github.io/falcon/v3.16.0/app/e-commerce/orders/order-details.html">
+              <a href="https://prium.github.io/Core&Outline/v3.16.0/app/e-commerce/orders/order-details.html">
                 <strong>${orderId}</strong>
               </a>
               by
@@ -502,12 +485,8 @@ const advanceAjaxTableInit = () => {
         `;
       }
     };
-    const paginationButtonNext = table.querySelector(
-      '[data-list-pagination="next"]'
-    );
-    const paginationButtonPrev = table.querySelector(
-      '[data-list-pagination="prev"]'
-    );
+    const paginationButtonNext = table.querySelector('[data-list-pagination="next"]');
+    const paginationButtonPrev = table.querySelector('[data-list-pagination="prev"]');
     const viewAll = table.querySelector('[data-list-view="*"]');
     const viewLess = table.querySelector('[data-list-view="less"]');
     const listInfo = table.querySelector('[data-list-info]');
@@ -516,10 +495,9 @@ const advanceAjaxTableInit = () => {
     const orderList = new window.List(table, options, orders);
 
     // Fallback
-    orderList.on('updated', item => {
+    orderList.on('updated', (item) => {
       const fallback =
-        table.querySelector('.fallback') ||
-        document.getElementById(options.fallback);
+        table.querySelector('.fallback') || document.getElementById(options.fallback);
 
       if (fallback) {
         if (item.matchingItems.length === 0) {
@@ -532,27 +510,20 @@ const advanceAjaxTableInit = () => {
 
     const totalItem = orderList.items.length;
     const itemsPerPage = orderList.page;
-    const btnDropdownClose =
-      orderList.listContainer.querySelector('.btn-close');
+    const btnDropdownClose = orderList.listContainer.querySelector('.btn-close');
     let pageQuantity = Math.ceil(totalItem / itemsPerPage);
     let numberOfcurrentItems = orderList.visibleItems.length;
     let pageCount = 1;
 
     btnDropdownClose &&
-      btnDropdownClose.addEventListener('search.close', () =>
-        orderList.fuzzySearch('')
-      );
+      btnDropdownClose.addEventListener('search.close', () => orderList.fuzzySearch(''));
 
     const updateListControls = () => {
       listInfo &&
         (listInfo.innerHTML = `${orderList.i} to ${numberOfcurrentItems} of ${totalItem}`);
-      paginationButtonPrev &&
-        togglePaginationButtonDisable(paginationButtonPrev, pageCount === 1);
+      paginationButtonPrev && togglePaginationButtonDisable(paginationButtonPrev, pageCount === 1);
       paginationButtonNext &&
-        togglePaginationButtonDisable(
-          paginationButtonNext,
-          pageCount === pageQuantity
-        );
+        togglePaginationButtonDisable(paginationButtonNext, pageCount === pageQuantity);
 
       if (pageCount > 1 && pageCount < pageQuantity) {
         togglePaginationButtonDisable(paginationButtonNext, false);
@@ -562,20 +533,19 @@ const advanceAjaxTableInit = () => {
     updateListControls();
 
     if (paginationButtonNext) {
-      paginationButtonNext.addEventListener('click', e => {
+      paginationButtonNext.addEventListener('click', (e) => {
         e.preventDefault();
         pageCount += 1;
 
         const nextInitialIndex = orderList.i + itemsPerPage;
-        nextInitialIndex <= orderList.size() &&
-          orderList.show(nextInitialIndex, itemsPerPage);
+        nextInitialIndex <= orderList.size() && orderList.show(nextInitialIndex, itemsPerPage);
         numberOfcurrentItems += orderList.visibleItems.length;
         updateListControls();
       });
     }
 
     if (paginationButtonPrev) {
-      paginationButtonPrev.addEventListener('click', e => {
+      paginationButtonPrev.addEventListener('click', (e) => {
         e.preventDefault();
         pageCount -= 1;
 
@@ -612,7 +582,7 @@ const advanceAjaxTableInit = () => {
       });
     }
     if (options.pagination) {
-      table.querySelector('.pagination').addEventListener('click', e => {
+      table.querySelector('.pagination').addEventListener('click', (e) => {
         if (e.target.classList[0] === 'page') {
           pageCount = Number(e.target.innerText);
           updateListControls();
@@ -621,15 +591,12 @@ const advanceAjaxTableInit = () => {
     }
     if (options.filter) {
       const { key } = options.filter;
-      listFilter.addEventListener('change', e => {
-        orderList.filter(item => {
+      listFilter.addEventListener('change', (e) => {
+        orderList.filter((item) => {
           if (e.target.value === '') {
             return true;
           }
-          return item
-            .values()
-            [key].toLowerCase()
-            .includes(e.target.value.toLowerCase());
+          return item.values()[key].toLowerCase().includes(e.target.value.toLowerCase());
         });
       });
     }

@@ -69,7 +69,7 @@
 
 
 
-  /* ------------------------------ Falcon Button ----------------------------- */
+  /* ------------------------------ Core&Outline Button ----------------------------- */
 
   // --#{$prefix}btn-falcon-background: var(--#{$prefix}white);
   --#{$prefix}btn-falcon-background: #{$white};
@@ -86,7 +86,7 @@
 
   @each $color,
   $value in $theme-colors {
-    /* ------------------------------ Falcon button ----------------------------- */
+    /* ------------------------------ Core&Outline button ----------------------------- */
     --#{$prefix}btn-falcon-#{$color}-color: var(--#{$prefix}#{$color});
     --#{$prefix}btn-falcon-#{$color}-hover-color: #{shift-color($value, 17%)};
     --#{$prefix}btn-falcon-#{$color}-active-background: #{shift-color($value, -80%)};
@@ -418,7 +418,7 @@
   --#{$prefix}simplebar-bg: rgba(var(--falcon-gray-400-rgb), 1);
 
 
-  /* ------------------------------- Falcon Pill ------------------------------ */
+  /* ------------------------------- Core&Outline Pill ------------------------------ */
   --#{$prefix}nav-pills-falcon-active-bg-color: #{$white};
 
   /* ------------------------------- Hover Background ------------------------------ */

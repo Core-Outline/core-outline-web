@@ -1,0 +1,268 @@
+<link href="undefinedvendors/swiper/swiper-bundle.min.css" rel="stylesheet" />
+<script src="undefinedvendors/swiper/swiper-bundle.min.js"> </script>
+<script src="undefinedvendors/typed.js/typed.js"></script>
+<nav class="navbar navbar-standard navbar-expand-lg fixed-top navbar-dark" data-navbar-darken-on-scroll="data-navbar-darken-on-scroll">
+  <div class="container"><a class="navbar-brand" href="#"><span class="text-white dark__text-white">Core&amp;Outline</span></a><button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse scrollbar" id="navbarStandard">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item d-flex align-items-center me-2">
+          <div class="nav-link theme-switch-toggle fa-icon-wait p-0"><input class="form-check-input ms-0 theme-switch-toggle-input" id="themeControlToggle" type="checkbox" data-theme-control="theme" value="dark" /><label class="mb-0 theme-switch-toggle-label theme-switch-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to light theme"><span class="fas fa-sun"></span></label><label class="mb-0 py-2 theme-switch-toggle-light d-lg-none" for="themeControlToggle"><span>Switch to light theme</span></label><label class="mb-0 theme-switch-toggle-label theme-switch-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme"><span class="fas fa-moon"></span></label><label class="mb-0 py-2 theme-switch-toggle-dark d-lg-none" for="themeControlToggle"><span>Switch to dark theme</span></label></div>
+        </li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownLogin" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+          <div class="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-card" aria-labelledby="navbarDropdownLogin">
+            <div class="card shadow-none navbar-card-login">
+              <div class="card-body fs--1 p-4 fw-normal">
+                <div class="row text-start justify-content-between align-items-center mb-2">
+                  <div class="col-auto">
+                    <h5 class="mb-0">Log in</h5>
+                  </div>
+                  <div class="col-auto">
+                    <p class="fs--1 text-600 mb-0">or <a href="#">Create an account</a></p>
+                  </div>
+                </div>
+                <form>
+                  <div class="mb-3"><input class="form-control" type="email" placeholder="Email address" /></div>
+                  <div class="mb-3"><input class="form-control" type="password" placeholder="Password" /></div>
+                  <div class="row flex-between-center">
+                    <div class="col-auto">
+                      <div class="form-check mb-0"><input class="form-check-input" type="checkbox" id="modal-checkbox" /><label class="form-check-label mb-0" for="modal-checkbox">Remember me</label></div>
+                    </div>
+                    <div class="col-auto"><a class="fs--1" href="#">Forgot Password?</a></div>
+                  </div>
+                  <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Log in</button></div>
+                </form>
+                <div class="position-relative mt-4">
+                  <hr />
+                  <div class="divider-content-center">or log in with</div>
+                </div>
+                <div class="row g-2 mt-2">
+                  <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="#"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
+                  <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span class="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-4">
+        <div class="row text-start justify-content-between align-items-center mb-2">
+          <div class="col-auto">
+            <h5 id="modalLabel">Register</h5>
+          </div>
+          <div class="col-auto">
+            <p class="fs--1 text-600 mb-0">Have an account? <a href="#">Login</a></p>
+          </div>
+        </div>
+        <form>
+          <h5 id="modalLabel">Company</h5>
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Company Name" /></div>
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Contact Email" /></div>
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Contact Phone" /></div>
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Industry" /></div>
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Location" /></div>
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Number of Employees" /></div>
+          <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="next">Next</button></div>
+        </form>
+        <div class="position-relative mt-4">
+          <hr />
+          <div class="divider-content-center">or register with</div>
+        </div>
+        <div class="row g-2 mt-2">
+          <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="#"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
+          <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span class="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================--><!-- <section> begin ============================-->
+<section class="py-0 overflow-hidden" id="banner" data-bs-theme="light">
+  <div class="bg-holder overlay" style="background-image:url(undefinedassets/img/generic/bg-2.jpg);background-position: center bottom;"></div><!--/.bg-holder-->
+  <div class="container">
+    <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
+      <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start"><a class="btn btn-outline-danger mb-4 fs--1 border-2 rounded-pill" href="#!"><span class="me-2" role="img" aria-label="Gift">🎁</span>Request a demo</a>
+        <h1 class="text-white fw-light">Bring <span class="typed-text fw-bold" data-typed-text='["prediction","forecasting","market research","business intelligence"]'></span><br />to your Company</h1>
+        <p class="lead text-white opacity-75">With the power of AI, you can now focus on your company growth as we help you develop the metrics to understand, predict and create towards your goals!</p><a class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" href="#!">Apply for the insider program<span class="fas fa-play ms-2" data-fa-transform="shrink-6 down-1"></span></a>
+      </div>
+      <div class="col-xl-7 offset-xl-1 align-self-end mt-4 mt-xl-0"><a class="img-landing-banner rounded" href="undefineddashboard/default"><img class="img-fluid" src="undefinedassets/img/generic/dashboard-alt.png" alt="founded" /></a></div>
+    </div>
+  </div><!-- end of .container-->
+</section><!-- <section> close ============================--><!-- ============================================-->
+
+
+
+<!-- ============================================--><!-- <section> begin ============================-->
+<section>
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8 col-xl-7 col-xxl-6">
+        <h1 class="fs-2 fs-sm-4 fs-md-5">Fully-furnished data analytics and prediction platform</h1>
+        <p class="leadWe">provide state of the art data visualizations that help you get a real view of all the trends in your business. We also provide you with the tools to predict future trends and make the right decisions.</p>
+      </div>
+    </div>
+    <div class="row flex-center mt-8">
+      <div class="col-md col-lg-5 col-xl-4 ps-lg-6"><img class="img-fluid px-6 px-md-0" src="undefinedassets/img/icons/spot-illustrations/21.png" alt="" /></div>
+      <div class="col-md col-lg-5 col-xl-4 mt-4 mt-md-0">
+        <h5 class="text-danger"><span class="far fa-lightbulb me-2"></span>CONNECT</h5>
+        <h3>Streamlined Data Processing & Organization</h3>
+        <p>Upload files and data to the AI-powered system for automatic classification, collection, and assessment. The system leverages AI and ML algorithms to intelligently categorize and organize data, making it easier for the company to access and analyze relevant information efficiently. This feature eliminates the need for manual sorting and enhances data management capabilities.</p>
+      </div>
+    </div>
+    <div class="row flex-center mt-7">
+      <div class="col-md col-lg-5 col-xl-4 pe-lg-6 order-md-2"><img class="img-fluid px-6 px-md-0" src="undefinedassets/img/icons/spot-illustrations/49.png" alt="" /></div>
+      <div class="col-md col-lg-5 col-xl-4 mt-4 mt-md-0">
+        <h5 class="text-info"> <span class="far fa-object-ungroup me-2"></span>COLLECT DATA, AUTOMATE TASKS</h5>
+        <h3>Enhanced Performance Monitoring & Workflow Optimization</h3>
+        <p>Gain valuable insights into client applications through data collection and analysis. The AI and ML algorithms track user behavior, application performance, and other relevant metrics to provide comprehensive analytics. Additionally, the system automates repetitive tasks, freeing up valuable time for employees to focus on more strategic initiatives and improving overall operational efficiency.</p>
+      </div>
+    </div>
+    <div class="row flex-center mt-7">
+      <div class="col-md col-lg-5 col-xl-4 ps-lg-6"><img class="img-fluid px-6 px-md-0" src="undefinedassets/img/icons/spot-illustrations/48.png" alt="" /></div>
+      <div class="col-md col-lg-5 col-xl-4 mt-4 mt-md-0">
+        <h5 class="text-success"><span class="far fa-paper-plane me-2"></span>PREDICTIONS AND ANALYTICS</h5>
+        <h3>Comprehensive Insights from Diverse Data Sets</h3>
+        <p>Utilize AI and ML techniques to generate predictions and analytics based on a wide range of data sources, including excel sheets, reports, articles, and more. The system extracts relevant information, identifies patterns, and performs sophisticated analysis to deliver actionable insights. These predictive capabilities empower decision-makers to make informed choices, optimize strategies, and stay ahead of the competition.</p>
+      </div>
+    </div>
+  </div><!-- end of .container-->
+</section><!-- <section> close ============================--><!-- ============================================-->
+
+
+
+<!-- ============================================--><!-- <section> begin ============================-->
+<section class="bg-light text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="fs-2 fs-sm-4 fs-md-5">Here's what's in it for you</h1>
+        <p class="lead">Things you will get right out of the box with Core&amp;Outline.</p>
+      </div>
+    </div>
+    <div class="row mt-6">
+      <div class="col-lg-4">
+        <div class="card card-span h-100">
+          <div class="card-span-img"><span class="far fa-chart-bar fs-4 text-info"></span></div>
+          <div class="card-body pt-6 pb-4">
+            <h5 class="mb-2">Accurate Predictions for Future Insights</h5>
+            <p>Our advanced Machine Learning models provide companies with accurate predictions that enable them to see into the future of their business.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-6 mt-lg-0">
+        <div class="card card-span h-100">
+          <div class="card-span-img"><span class="far fa-file-alt fs-4 text-success"></span></div>
+          <div class="card-body pt-6 pb-4">
+            <h5 class="mb-2">Comprehensive Data Analytics</h5>
+            <p>Our data analytics capabilities go beyond simple reporting and delve into in-depth analysis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-6 mt-lg-0">
+        <div class="card card-span h-100">
+          <div class="card-span-img"><span class="far fa-calendar-check fs-4 text-danger"></span></div>
+          <div class="card-body pt-6 pb-4">
+            <h5 class="mb-2">Decision Making & Strategic Planning</h5>
+            <p>With our solutions, companies can enhance their decision-making processes and strategic planning initiatives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of .container-->
+</section><!-- <section> close ============================--><!-- ============================================-->
+
+
+
+<!-- ============================================--><!-- <section> begin ============================-->
+<section class="bg-dark" data-bs-theme="light">
+  <div class="bg-holder overlay" style="background-image:url(undefinedassets/img/generic/bg-2.jpg);background-position: center top;"></div><!--/.bg-holder-->
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <p class="fs-3 fs-sm-4 text-white">Join our community of 100+ companies and businesses on their mission to build better predictions and understanding your niche.</p><button class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">Start your journey</button>
+      </div>
+    </div>
+  </div><!-- end of .container-->
+</section><!-- <section> close ============================--><!-- ============================================-->
+
+
+
+<!-- ============================================--><!-- <section> begin ============================-->
+<section class="bg-dark pt-8 pb-4" data-bs-theme="light">
+  <div class="container">
+    <div class="position-absolute btn-back-to-top bg-dark"><a class="text-600" href="#banner" data-bs-offset-top="0"><span class="fas fa-chevron-up" data-fa-transform="rotate-45"></span></a></div>
+    <div class="row">
+      <div class="col-lg-4">
+        <h5 class="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
+        <p class="text-600">At Core & Outline, our mission is to empower businesses with state-of-the-art data visualizations and accurate predictions through our cutting-edge Machine Learning models. We are dedicated to helping our clients gain a real view of all the trends in company and industry data, enabling them to make informed decisions that drive success and propel their businesses into the future.</p>
+        <div class="icon-group mt-4"><a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a><a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a><a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a><a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a><a class="icon-item bg-white" href="#!"><span class="fab fa-medium-m"></span></a></div>
+      </div>
+      <div class="col ps-lg-6 ps-xl-8">
+        <div class="row mt-5 mt-lg-0">
+          <div class="col-6 col-md-3">
+            <h5 class="text-uppercase text-white opacity-85 mb-3">Company</h5>
+            <ul class="list-unstyled">
+              <li class="mb-1"><a class="link-600" href="#!">About</a></li>
+              <li class="mb-1"><a class="link-600" href="#!">Contact</a></li>
+              <li class="mb-1"><a class="link-600" href="#!">Blog</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5 class="text-uppercase text-white opacity-85 mb-3">Product</h5>
+            <ul class="list-unstyled">
+              <li class="mb-1"><a class="link-600" href="#!">Features</a></li>
+              <li class="mb-1"><a class="link-600" href="#!">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="col mt-5 mt-md-0">
+            <h5 class="text-uppercase text-white opacity-85 mb-3">From the Blog</h5>
+            <ul class="list-unstyled">
+              <li>
+                <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> 5 Metrics that investors are looking for.</a></h5>
+                <p class="text-600 opacity-50">July 16 &bull; 8min read </p>
+              </li>
+              <li>
+                <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Automating your business using Core&amp;Outline.</a></h5>
+                <p class="text-600 opacity-50">July 16 &bull; 3min read &starf;</p>
+              </li>
+              <li>
+                <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Looping in your stakeholders.</a></h5>
+                <p class="text-600 opacity-50">July 16 &bull; 2min read</p>
+              </li>
+              <li>
+                <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Recession vs Inflation (Financial Engineering)</a></h5>
+                <p class="text-600 opacity-50">July 16 &bull; 10min read </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of .container-->
+</section><!-- <section> close ============================--><!-- ============================================-->
+
+
+
+<!-- ============================================--><!-- <section> begin ============================-->
+<section class="py-0 bg-dark" data-bs-theme="light">
+  <div>
+    <hr class="my-0 text-600 opacity-25" />
+    <div class="container py-3">
+      <div class="row justify-content-between fs--1">
+        <div class="col-12 col-sm-auto text-center">
+          <p class="mb-0 text-600 opacity-85">Core&amp;Outline.<span class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2023 &copy; </p>
+        </div>
+        <div class="col-12 col-sm-auto text-center">
+          <p class="mb-0 text-600 opacity-85"></p>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of .container-->
+</section><!-- <section> close ============================--><!-- ============================================-->

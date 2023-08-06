@@ -24,7 +24,7 @@ append content
         .col-lg-12
           .row.g-3
             .col-md-6
-              +CardWeeklySales('fs-2').echart-bar-weekly-sales-smaller-width
+              +CardMonthlyRecurringRevenue('fs-2').echart-bar-weekly-sales-smaller-width
             .col-md-6
               +CardProductShare.product-share-doughnut-width
             .col-md-6
@@ -35,7 +35,7 @@ append content
                   chart: 'echart-product-share',
                   data:[
                     {
-                      brand: 'Falcon',
+                      brand: 'Core&Outline',
                       color: 'primary',
                       percentage: '57'
                     },
@@ -53,7 +53,7 @@ append content
                 }
               +CardMarketShare(marketShare).h-100
             .col-md-6
-              +CardTotalOrderEcommerce
+              +CardRevenueGrowthRateEcommerce
     .col-xxl-6.col-xl-12
       +CardSaleStatistics.py-3.mb-3
       +CardTotalSalesEcommerce

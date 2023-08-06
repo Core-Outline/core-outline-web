@@ -1,48 +1,51 @@
 extends ../layouts/LayoutTheme
-include ../mixins/home/dashboard-alt/CardStatistics
-include ../mixins/home/dashboard-alt/CardPaymentChart
-include ../mixins/home/dashboard-alt/CardDipositeStatus
-include ../mixins/home/saas/SaasStatsticsCards
+include ../mixins/home/dashboard-alt/CardActiveUserChart
+include ../mixins/home/dashboard-analytics/CardAskIntelligence
+include ../mixins/home/dashboard-analytics/CardAudience
+include ../mixins/home/dashboard-analytics/CardSession
+include ../mixins/home/dashboard-analytics/CardActiveUsersReport
+include ../mixins/home/dashboard-analytics/CardPagesTable
 include ../mixins/home/dashboard/CardActiveUsers
-include ../mixins/home/dashboard/CardSharedFiles
-include ../mixins/home/saas/CandleChart
-include ../mixins/home/saas/GrossRevenueCard
-include ../mixins/home/saas/TransactionSummary
-include ../mixins/home/saas/DoMoreCard
+include ../mixins/home/dashboard-analytics/CardCharts
+include ../mixins/home/dashboard-analytics/CardGoals
+
+prepend styles
+  link(href=`${CWD}vendors/leaflet/leaflet.css`, rel='stylesheet')
+  link(href=`${CWD}vendors/leaflet.markercluster/MarkerCluster.css`, rel='stylesheet')
+  link(href=`${CWD}vendors/leaflet.markercluster/MarkerCluster.Default.css`, rel='stylesheet')
 
 prepend scripts
-  script(src=`${CWD}vendors/chart/chart.min.js`)
-  script(src=`${CWD}vendors/countup/countUp.umd.js`)
-  script(src=`${CWD}vendors/lodash/lodash.min.js`)
   script(src=`${CWD}vendors/echarts/echarts.min.js`)
+  script(src=`${CWD}assets/data/world.js`)
+  script(src=`${CWD}vendors/chart/chart.min.js`)
   script(src=`${CWD}vendors/dayjs/dayjs.min.js`)
 
 append content
-  .row.g-3
-    .col-xxl-9
-      +CardPaymentChart.h-100
-    .col
-      +SaasStatsticsCards
-
   .row.g-3.mb-3
-    .col-xxl-9
-      +CardDipositeStatus.my-3
-      +CardStatistics
-      .row.g-3
-        .col-12
-          +CandleChart
-        .col-lg-4
-          +CardActiveUsers({end: 7})
-        .col-lg-8
-          +GrossRevenueCard.h-100
-    .col
-      .row.g-3
-        .col-xxl-12
-          +CardSharedFiles(0,5).h-100.h-xxl-auto.mt-xxl-3
-        .col-md.col-xxl-12
-          +CardBandWidthSaved.h-100.h-xxl-auto
-        .col-md.col-xxl-12
-          +DoMoreCard  
-  .row
-    .col 
-      +TransactionSummary
+    .col-xxl-8
+      +CardAudience.mb-3
+      //- +CardConnect
+    .col-md-6.col-xxl-4
+      +CardActiveUserChart
+    .col-md-6.col-xxl-4
+      +SessionByDevice.h-100
+    .col-md-6.col-xxl-4
+      +SessionByCountry
+    .col-md-6.col-xxl-4
+      +AskIntelligence.h-100
+  .row.g-3.mb-3
+    .col-lg-7.d-flex.flex-column.align-items-stretch
+      +ActiveUsers.mb-3.h-100
+      //- +Goals.h-100
+    .col-lg-4
+      +CardActiveUsers({end: 8})
+  .row.g-3.mb-3
+    .col-lg-5.col-xxl-4
+      +UsersByTime
+    .col-lg-7.col-xxl-8
+      +PagesTable.h-100
+  .row.g-3
+    .col-lg-12.col-xxl-6
+      +BounceRate
+    //- .col-lg-7.col-xxl-6
+    //-   +TrafficChannel

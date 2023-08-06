@@ -1,0 +1,65 @@
+include ../../core/Section.pug
+
+
+append variables 
+  -
+    var dataSources = [
+      {
+        name: 'MyMongoDBDataSource',
+        type: 'mongodb',
+        id: '225',
+      },
+      {
+        name: 'MyMongoDBDataSource',
+        type: 'mongodb',
+        id: '226',
+      },
+      {
+        name: 'MyMongoDBDataSource',
+        type: 'mongodb',
+        id: '227',
+      },
+      {
+        name: 'MyMongoDBDataSource',
+        type: 'mongodb',
+        id: '227',
+      },
+      {
+        name: 'MyMongoDBDataSource',
+        type: 'mongodb',
+        id: '227',
+      },
+      {
+        name: 'MyMongoDBDataSource',
+        type: 'mongodb',
+        id: '227',
+      },
+      {
+        name: 'MyMongoDBDataSource',
+        type: 'mongodb',
+        id: '227',
+      },
+    ]
+
+mixin CardDataSources
+    .row.g-3.mb-6.mt-2
+      each dataSrc, index in dataSources
+        .col-md-3.col-xxl-3
+            +CardDataSource(dataSrc)
+
+
+
+mixin CardDataSource(config)
+    .card.h-md-30.w-md-30
+        .row.gx-0.mt-1.flex-between-center
+            .col-md-3.col-xxl-3
+                h6.sm.mb-0.mt-2.d-flex.align-items-center  #{config.name}
+            .col-md-3.col-xl-4
+                span.badge.badge-subtle-success.rounded-pill.fs--2  #{config.type}
+
+        div 
+            img(src=`../assets/img/illustrations/mongobkg.png`, alt="" width='100%')
+
+
+
+    

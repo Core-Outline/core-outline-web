@@ -1,5 +1,4 @@
-extends ../layouts/LayoutTheme
-include ../mixins/common/ComingSoon
+//- extends ../layouts/LayoutTheme
 include ../mixins/navbars/NavbarStandard
 include ../mixins/home/landing/Banner
 include ../mixins/home/landing/Cta
@@ -45,7 +44,8 @@ block mainContent
                   h5.mb-0 Log in
                 .col-auto
                   p.fs--1.text-600.mb-0 or 
-                    a(href=`${CWD}${paths['simple-register']}`) Create an account
+                    //- a(href=`${CWD}${paths['simple-register']}`) Create an account
+                    a(href=`#`) Create an account
 
               +LoginForm({
                 layout:'simple',
@@ -58,10 +58,10 @@ block mainContent
       li.nav-item
         a(href='#!' data-bs-toggle='modal' data-bs-target='#exampleModal').nav-link Register
   +Banner
-  +CtaClients
+  //- +CtaClients
   +Features1
   +Features2
   //- +Testimonial
   +CtaFooter
   +FooterStandard
-  +AuthenticationModal
+  //- +AuthenticationModal

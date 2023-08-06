@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/*                                Falcon Button                               */
+/*                                Core&Outline Button                               */
 /* -------------------------------------------------------------------------- */
 @mixin falcon-button-variant($color) {
   color: var(--#{$prefix}btn-falcon-#{$color}-color);

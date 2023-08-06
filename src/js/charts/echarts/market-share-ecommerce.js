@@ -13,11 +13,7 @@ const marketShareEcommerceInit = () => {
     const chart = window.echarts.init($echartProductShare);
 
     const getDefaultOptions = () => ({
-      color: [
-        utils.getColors().primary,
-        utils.getColors().info,
-        utils.getColors().warning,
-      ],
+      color: [utils.getColors().primary, utils.getColors().info, utils.getColors().warning],
       tooltip: {
         trigger: 'item',
         padding: [7, 10],
@@ -28,7 +24,7 @@ const marketShareEcommerceInit = () => {
         transitionDuration: 0,
         formatter(params) {
           return `<strong>${params.data.name}:</strong> ${params.percent}%`;
-        },
+        }
       },
       position(pos, params, dom, rect, size) {
         return getPosition(pos, params, dom, rect, size);
@@ -42,7 +38,7 @@ const marketShareEcommerceInit = () => {
           hoverAnimation: false,
           itemStyle: {
             borderWidth: 2,
-            borderColor: utils.getColor('gray-100'),
+            borderColor: utils.getColor('gray-100')
           },
           label: {
             normal: {
@@ -51,21 +47,21 @@ const marketShareEcommerceInit = () => {
               textStyle: {
                 fontSize: '20',
                 fontWeight: '500',
-                color: utils.getGrays()['700'],
-              },
+                color: utils.getGrays()['700']
+              }
             },
             emphasis: {
-              show: false,
-            },
+              show: false
+            }
           },
           labelLine: { normal: { show: false } },
           data: [
-            { value: 5300000, name: 'Falcon' },
+            { value: 5300000, name: 'Core&Outline' },
             { value: 1900000, name: 'Sparrow' },
-            { value: 2000000, name: 'Phoenix' },
-          ],
-        },
-      ],
+            { value: 2000000, name: 'Phoenix' }
+          ]
+        }
+      ]
     });
 
     echartSetOption(chart, userOptions, getDefaultOptions);

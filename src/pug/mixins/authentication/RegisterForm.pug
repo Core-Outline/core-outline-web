@@ -1,24 +1,48 @@
 mixin RegisterForm(config)
-  - var config = Object.assign({layout: 'basic', name: {}, email: {}, password: {}, confirmPassword: {}, checkbox: { id: 'basic-checkbox' } }, config)
-
-  form
+  //- - var config = Object.assign({layout: 'basic', name: {}, email: {}, password: {}, confirmPassword: {}, companyName: {}, checkbox: { id: 'basic-checkbox' } }, config)
+  form#userForm(style="display:none")
     .mb-3
       if config.name.label
         label.form-label(for=config.name.attrs.id)=config.name.label
-      input.form-control(type='text' autocomplete="on")&attributes(config.name.attrs)
+      input.form-control(type='text' autocomplete="on" id="name")&attributes(config.name.attrs)
     .mb-3
       if config.email.label
         label.form-label(for=config.email.attrs.id)=config.email.label
-      input.form-control(type='email' autocomplete="on")&attributes(config.email.attrs)
+      input.form-control(type='email' autocomplete="on" id="email")&attributes(config.email.attrs)
     .row.gx-2
       .mb-3.col-sm-6
         if config.password.label
           label.form-label(for=config.password.attrs.id)=config.password.label
-        input.form-control(type='password' autocomplete="on")&attributes(config.password.attrs)
+        input.form-control(type='password' autocomplete="on" id="password")&attributes(config.password.attrs)
       .mb-3.col-sm-6
         if config.confirmPassword.label
           label.form-label(for=config.confirmPassword.attrs.id)=config.confirmPassword.label
-        input.form-control(type='password' autocomplete="on")&attributes(config.confirmPassword.attrs)
+        input.form-control(type='password' autocomplete="on" id="confirm_password")&attributes(config.confirmPassword.attrs)
+
+    .mb-3
+      button.btn.btn-primary.d-block.w-100.mt-3#registerUserBtn Register
+  
+  form#companyForm(style="display:block" action="/signup" method="post")
+    .mb-3
+      if config.companyName.label
+        label.form-label(for=config.companyName.attrs.id)=config.companyName.label
+      input.form-control(type='text' autocomplete="on", id='company_name')&attributes(config.companyName.attrs)
+    .mb-3
+      if config.contactEmail.label
+        label.form-label(for=config.contactEmail.attrs.id)=config.contactEmail.label
+      input.form-control(type='email' autocomplete="on", id="contact_email")&attributes(config.contactEmail.attrs)
+    .mb-3
+      if config.location.label
+        label.form-label(for=config.contactEmail.attrs.id)=config.location.label
+      input.form-control(type='address' autocomplete="on" id="location")&attributes(config.location.attrs)
+    .mb-3
+      if config.industry.label
+        label.form-label(for=config.industry.attrs.id)=config.industry.label
+      input.form-control(type='text' autocomplete="on", id="industry")&attributes(config.industry.attrs)
+    .mb-3
+      if config.employeeCount.label
+        label.form-label(for=config.employeeCount.attrs.id)=config.employeeCount.label
+      input.form-control(type='number' autocomplete="on", id="employee_count")&attributes(config.employeeCount.attrs)
 
     .form-check
       input.form-check-input(type='checkbox')&attributes(config.checkbox.attrs)
@@ -28,4 +52,74 @@ mixin RegisterForm(config)
         | and 
         a(href='#!') privacy policy
     .mb-3
-      button.btn.btn-primary.d-block.w-100.mt-3(type='submit' name='submit') Register
+      button.btn.btn-primary.d-block.w-100.mt-3#showUserFormBtn(type='button') Next
+
+  script(src=`register.js`)
+  script 
+    include register.js
+  script.
+      const dir = window.location.pathname
+      console.log(dir)
+      const companyForm = document.getElementById('companyForm');
+      const userForm = document.getElementById('userForm');
+      
+      const showUserFormBtn = document.getElementById('showUserFormBtn');
+      const registerUserBtn = document.getElementById('registerUserBtn');
+
+      let organizationId;
+
+
+      showUserFormBtn.addEventListener('click', async() => {
+        const formData = new FormData(companyForm);
+        const company = Object.assign({
+          name: document.getElementById('company_name').value,
+          contact_email: document.getElementById('contact_email').value,
+          location: document.getElementById('location').value,
+          industry: document.getElementById('industry').value,
+          employee_count: document.getElementById('employee_count').value,
+        });
+
+        organizationId = await createOrganization(company)
+        .then(response => response.json())
+        .then(data => {
+          return data._id;
+        })
+        .catch(error => {
+          console.error(error);
+          return error
+        });
+        console.log(organizationId)
+
+        
+        companyForm.style.display = 'none';
+        userForm.style.display = 'block';
+      });
+
+      registerUserBtn.addEventListener('click', async(e) => { 
+        e.preventDefault()       
+        const user = Object.assign({
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          org_id: organizationId,
+          password: document.getElementById('password').value,
+        });
+        console.log(user);
+        const token = await signUp(user)
+        .then(response => response.json())
+        .then(data => {
+          return data;
+        })
+        .catch(error => {
+          console.error(error);
+          return error
+        });
+        console.log(token)
+
+        window.location.href = `${dir}dashboard/default.html`;  
+
+
+        //- userForm.style.display = 'none';
+        //- companyForm.style.display = 'block';
+      });
+
+      
