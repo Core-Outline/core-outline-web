@@ -15,10 +15,9 @@ mixin RegisterBasicContent
     link: 'simple/login.html'
   }).mb-2
   script.
-    var currentPage = 'company_details'; 
 
-  +RegisterForm(currentPage, {
-    companyName: { attrs: { placeholder: 'Company Name', id: "name"} },
+  +RegisterForm({
+    companyName: { attrs: { placeholder: 'Company Name'} },
     contactEmail: { attrs: { placeholder: 'Contact Email' } },
     location: { attrs: { placeholder: 'Location' } },
     industry: { attrs: { placeholder: 'Industry: advertising, agriculture, hospitality etc.' } },

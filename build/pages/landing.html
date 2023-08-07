@@ -60,16 +60,135 @@
             <p class="fs--1 text-600 mb-0">Have an account? <a href="#">Login</a></p>
           </div>
         </div>
-        <form>
-          <h5 id="modalLabel">Company</h5>
-          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Company Name" /></div>
-          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Contact Email" /></div>
-          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Contact Phone" /></div>
-          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Industry" /></div>
-          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Location" /></div>
-          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" placeholder="Number of Employees" /></div>
-          <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="next">Next</button></div>
+        <form id="userForm" style="display:none">
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" id="name" placeholder="Name" /></div>
+          <div class="mb-3"><input class="form-control" type="email" autocomplete="on" id="email" placeholder="Email address" /></div>
+          <div class="row gx-2">
+            <div class="mb-3 col-sm-6"><input class="form-control" type="password" autocomplete="on" id="password" placeholder="Password" /></div>
+            <div class="mb-3 col-sm-6"><input class="form-control" type="password" autocomplete="on" id="confirm_password" placeholder="Confirm Password" /></div>
+          </div>
+          <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" id="registerUserBtn">Register</button></div>
         </form>
+        <form id="companyForm" style="display:block" action="/signup" method="post">
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" id="company_name" placeholder="Company Name" /></div>
+          <div class="mb-3"><input class="form-control" type="email" autocomplete="on" id="contact_email" placeholder="Contact Email" /></div>
+          <div class="mb-3"><input class="form-control" type="address" autocomplete="on" id="location" placeholder="Location" /></div>
+          <div class="mb-3"><input class="form-control" type="text" autocomplete="on" id="industry" placeholder="Industry: advertising, agriculture, hospitality etc." /></div>
+          <div class="mb-3"><input class="form-control" type="number" autocomplete="on" id="employee_count" placeholder="Number of Employees" /></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="modal-register-checkbox" /><label class="form-label" for="modal-register-checkbox">I accept the <a href="#!">terms </a>and <a href="#!">privacy policy</a></label></div>
+          <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" id="showUserFormBtn" type="button">Next</button></div>
+        </form>
+        <script src="register.js"></script>
+        <script>
+          const api = require('./api');
+
+          async function signUp(formData) {
+            const url = 'http://3.91.67.250:5000/auth/signup'; // Replace this with the actual URL of your backend API endpoint
+            const headers = {
+              'Content-Type': 'application/json'
+            };
+            const method = 'POST';
+
+            // Call the request function from api.js to make the API call
+            return await fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(formData)
+            });
+          }
+
+          async function createOrganization(formData) {
+            const url = 'http://3.91.67.250:5000/organization/create'; // Replace this with the actual URL of your backend API endpoint
+            const headers = {
+              'Content-Type': 'application/json'
+            };
+            const method = 'POST';
+
+            // Call the request function from api.js to make the API call
+            return await fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(formData)
+            });
+          }
+
+          const CWD = __dirname;
+
+          module.exports = {
+            signUp,
+            createOrganization,
+            CWD
+          };
+        </script>
+        <script>
+          const dir = window.location.pathname
+          console.log(dir)
+          const companyForm = document.getElementById('companyForm');
+          const userForm = document.getElementById('userForm');
+
+          const showUserFormBtn = document.getElementById('showUserFormBtn');
+          const registerUserBtn = document.getElementById('registerUserBtn');
+
+          let organizationId;
+
+
+          showUserFormBtn.addEventListener('click', async () => {
+            const formData = new FormData(companyForm);
+            const company = Object.assign({
+              name: document.getElementById('company_name').value,
+              contact_email: document.getElementById('contact_email').value,
+              location: document.getElementById('location').value,
+              industry: document.getElementById('industry').value,
+              employee_count: document.getElementById('employee_count').value,
+            });
+
+            organizationId = await createOrganization(company)
+              .then(response => response.json())
+              .then(data => {
+                return data._id;
+              })
+              .catch(error => {
+                console.error(error);
+                return error
+              });
+            console.log(organizationId)
+
+
+            companyForm.style.display = 'none';
+            userForm.style.display = 'block';
+          });
+
+          registerUserBtn.addEventListener('click', async (e) => {
+            e.preventDefault()
+            const user = Object.assign({
+              name: document.getElementById('name').value,
+              email: document.getElementById('email').value,
+              org_id: organizationId,
+              password: document.getElementById('password').value,
+            });
+            console.log(user);
+            const token = await signUp(user)
+              .then(response => response.json())
+              .then(data => {
+                return data;
+              })
+              .catch(error => {
+                console.error(error);
+                return error
+              });
+            console.log(token)
+
+            window.location.href = `/dashboard/default.html`;
+
+
+            //- userForm.style.display = 'none';
+            //- companyForm.style.display = 'block';
+          });
+        </script>
         <div class="position-relative mt-4">
           <hr />
           <div class="divider-content-center">or register with</div>
@@ -90,9 +209,9 @@
     <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
       <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start"><a class="btn btn-outline-danger mb-4 fs--1 border-2 rounded-pill" href="#!"><span class="me-2" role="img" aria-label="Gift">🎁</span>Request a demo</a>
         <h1 class="text-white fw-light">Bring <span class="typed-text fw-bold" data-typed-text='["prediction","forecasting","market research","business intelligence"]'></span><br />to your Company</h1>
-        <p class="lead text-white opacity-75">With the power of AI, you can now focus on your company growth as we help you develop the metrics to understand, predict and create towards your goals!</p><a class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" href="#!">Apply for the insider program<span class="fas fa-play ms-2" data-fa-transform="shrink-6 down-1"></span></a>
+        <p class="lead text-white opacity-75">With the power of AI, you can now focus on your company growth as we help you develop the metrics to understand, predict and create towards your goals!</p><a class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" href="undefinedpages/authentication/simple/register.html">Apply for the insider program<span class="fas fa-play ms-2" data-fa-transform="shrink-6 down-1"></span></a>
       </div>
-      <div class="col-xl-7 offset-xl-1 align-self-end mt-4 mt-xl-0"><a class="img-landing-banner rounded" href="undefineddashboard/default"><img class="img-fluid" src="undefinedassets/img/generic/dashboard-alt.png" alt="founded" /></a></div>
+      <div class="col-xl-7 offset-xl-1 align-self-end mt-4 mt-xl-0"><a class="img-landing-banner rounded" href="/dashboard/default.html"><img class="img-fluid" src="undefinedassets/img/generic/dashboard-alt.png" alt="founded" /></a></div>
     </div>
   </div><!-- end of .container-->
 </section><!-- <section> close ============================--><!-- ============================================-->

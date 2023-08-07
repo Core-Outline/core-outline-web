@@ -13,22 +13,15 @@ block cardLeft
 block cardRight
   h3 Register
   +RegisterForm({
-    name: {
-      label: 'Name',
-      attrs: { id: 'card-name' }
-    },
-    email: {
-      label: 'Email address',
-      attrs: { id: 'card-email' }
-    },
-    password: {
-      label: 'Password',
-      attrs: { id: 'card-password' }
-    },
-    confirmPassword: {
-      label: 'Confirm Password',
-      attrs: { id: 'card-confirm-password' }
-    },
-    checkbox: { attrs: { id: 'card-register-checkbox' } },
-  })
+            name: { attrs: { placeholder: 'Name'} },
+            email: { attrs: { placeholder: 'Email address' } },
+            password: { attrs: { placeholder: 'Password' } },
+            confirmPassword: { attrs: { placeholder: 'Confirm Password' } },
+            checkbox: { attrs: { id: 'modal-register-checkbox' } },
+            companyName: { attrs: { placeholder: 'Company Name'} },
+            contactEmail: { attrs: { placeholder: 'Contact Email' } },
+            location: { attrs: { placeholder: 'Location' } },
+            industry: { attrs: { placeholder: 'Industry: advertising, agriculture, hospitality etc.' } },
+            employeeCount: { attrs: { placeholder: 'Number of Employees' } },
+          })
   +SocialButtons({ title: 'register' }).mt-4

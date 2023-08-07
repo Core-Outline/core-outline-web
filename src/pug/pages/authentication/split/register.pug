@@ -20,46 +20,16 @@ block splitContent
     link:'split/login.html'
   })
 
-
-  script.
-    var currentPage = 'company_details';
   +RegisterForm({
-    name: {
-      label: 'Name',
-      attrs: { id: 'name' }
-    },
-    email: {
-      label: 'Email address',
-      attrs: { id: 'modal-auth-email' }
-    },
-    password: {
-      label: 'Password',
-      attrs: { id: 'modal-auth-password' }
-    },
-    confirmPassword: {
-      label: 'Confirm Password',
-      attrs: { id: 'modal-auth-confirm-password' }
-    },
-    companyName: {
-      label: 'Company Name',
-      attrs: { id: 'modal-company-name' }
-    },
-    contactEmail: {
-      label: 'Contact Email',
-      attrs: { id: 'modal-company-email' }
-    },
-    location: {
-      label: 'Location',
-      attrs: { id: 'modal-location' }
-    },
-    industry: {
-      label: 'Industry',
-      attrs: { id: 'modal-industry' }
-    },
-    employeeCount: {
-      label: 'Number of Employees',
-      attrs: { id: 'modal-employee-count' }
-    },
-    checkbox: { attrs: { id: 'modal-auth-register-checkbox' } },
-  })
+            name: { attrs: { placeholder: 'Name'} },
+            email: { attrs: { placeholder: 'Email address' } },
+            password: { attrs: { placeholder: 'Password' } },
+            confirmPassword: { attrs: { placeholder: 'Confirm Password' } },
+            checkbox: { attrs: { id: 'modal-register-checkbox' } },
+            companyName: { attrs: { placeholder: 'Company Name'} },
+            contactEmail: { attrs: { placeholder: 'Contact Email' } },
+            location: { attrs: { placeholder: 'Location' } },
+            industry: { attrs: { placeholder: 'Industry: advertising, agriculture, hospitality etc.' } },
+            employeeCount: { attrs: { placeholder: 'Number of Employees' } },
+          })
   +SocialButtons({ title: 'register' }).mt-4

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Core&amp;Outline | Dashboard &amp; Web App Template</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="../../../assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="../../../assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="../../../assets/js/config.js"></script>
+    <script src="../../../vendors/simplebar/simplebar.min.js"></script>
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="../../../vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="../../../assets/css/theme-rtl.css" rel="stylesheet" id="style-rtl">
+    <link href="../../../assets/css/theme.css" rel="stylesheet" id="style-default">
+    <link href="../../../assets/css/user-rtl.css" rel="stylesheet" id="user-style-rtl">
+    <link href="../../../assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <div class="container" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('[data-layout]');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+        <div class="row flex-center min-vh-100 py-6">
+          <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4"><a class="d-flex flex-center mb-4" href="../../../undefined"><img class="me-2" src="../../../assets/img/icons/spot-illustrations/Core&amp;Outline.png" alt="" width="58" /><span class="font-sans-serif fw-bolder fs-5 d-inline-block">Core&amp;Outline</span></a>
+            <div class="card">
+              <div class="card-body p-4 p-sm-5">
+                <div class="row flex-between-center mb-2">
+                  <div class="col-auto">
+                    <h5>Register</h5>
+                  </div>
+                  <div class="col-auto fs--1 text-600"><span class="mb-0 undefined">Have an account?</span> <span><a href="../../../pages/authentication/simple/login.html">Login</a></span></div>
+                </div>
+                <script></script>
+                <form id="userForm" style="display:none">
+                  <div class="mb-3">
+                    <input class="form-control" type="text" autocomplete="on" id="name" placeholder="Namesa" />
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control" type="email" autocomplete="on" id="email" placeholder="Email address" />
+                  </div>
+                  <div class="row gx-2">
+                    <div class="mb-3 col-sm-6">
+                      <input class="form-control" type="password" autocomplete="on" id="password" placeholder="Password" />
+                    </div>
+                    <div class="mb-3 col-sm-6">
+                      <input class="form-control" type="password" autocomplete="on" id="confirm_password" placeholder="Confirm Password" />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <button class="btn btn-primary d-block w-100 mt-3" id="registerUserBtn">Register</button>
+                  </div>
+                </form>
+                <form id="companyForm" style="display:block" action="/signup" method="post">
+                  <div class="mb-3">
+                    <input class="form-control" type="text" autocomplete="on" id="company_name" placeholder="Company Name" />
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control" type="email" autocomplete="on" id="contact_email" placeholder="Contact Email" />
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control" type="address" autocomplete="on" id="location" placeholder="Location" />
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" autocomplete="on" id="industry" placeholder="Industry: advertising, agriculture, hospitality etc." />
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control" type="number" autocomplete="on" id="employee_count" placeholder="Number of Employees" />
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="basic-register-checkbox" />
+                    <label class="form-label" for="basic-register-checkbox">I accept the <a href="#!">terms </a>and <a href="#!">privacy policy</a></label>
+                  </div>
+                  <div class="mb-3">
+                    <button class="btn btn-primary d-block w-100 mt-3" id="showUserFormBtn" type="button">Next</button>
+                  </div>
+                </form>
+                <script src="register.js"></script>
+                <script>
+                  const api = require('./api');
+
+                  async function signUp(formData) {
+                    const url = 'http://3.91.67.250:5000/auth/signup'; // Replace this with the actual URL of your backend API endpoint
+                    const headers = {
+                      'Content-Type': 'application/json'
+                    };
+                    const method = 'POST';
+
+                    // Call the request function from api.js to make the API call
+                    return await fetch(url, {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(formData)
+                    });
+                  }
+
+                  async function createOrganization(formData) {
+                    const url = 'http://3.91.67.250:5000/organization/create'; // Replace this with the actual URL of your backend API endpoint
+                    const headers = {
+                      'Content-Type': 'application/json'
+                    };
+                    const method = 'POST';
+
+                    // Call the request function from api.js to make the API call
+                    return await fetch(url, {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(formData)
+                    });
+                  }
+
+                  const CWD = __dirname;
+
+                  module.exports = {
+                    signUp,
+                    createOrganization,
+                    CWD
+                  };
+                </script>
+                <script>
+                  const dir = window.location.pathname
+                  console.log(dir)
+                  const companyForm = document.getElementById('companyForm');
+                  const userForm = document.getElementById('userForm');
+
+                  const showUserFormBtn = document.getElementById('showUserFormBtn');
+                  const registerUserBtn = document.getElementById('registerUserBtn');
+
+                  let organizationId;
+
+
+                  showUserFormBtn.addEventListener('click', async () => {
+                    const formData = new FormData(companyForm);
+                    const company = Object.assign({
+                      name: document.getElementById('company_name').value,
+                      contact_email: document.getElementById('contact_email').value,
+                      location: document.getElementById('location').value,
+                      industry: document.getElementById('industry').value,
+                      employee_count: document.getElementById('employee_count').value,
+                    });
+
+                    organizationId = await createOrganization(company)
+                      .then(response => response.json())
+                      .then(data => {
+                        return data._id;
+                      })
+                      .catch(error => {
+                        console.error(error);
+                        return error
+                      });
+                    console.log(organizationId)
+
+
+                    companyForm.style.display = 'none';
+                    userForm.style.display = 'block';
+                  });
+
+                  registerUserBtn.addEventListener('click', async (e) => {
+                    e.preventDefault()
+                    const user = Object.assign({
+                      name: document.getElementById('name').value,
+                      email: document.getElementById('email').value,
+                      org_id: organizationId,
+                      password: document.getElementById('password').value,
+                    });
+                    console.log(user);
+                    const token = await signUp(user)
+                      .then(response => response.json())
+                      .then(data => {
+                        return data;
+                      })
+                      .catch(error => {
+                        console.error(error);
+                        return error
+                      });
+                    console.log(token)
+
+                    window.location.href = `/dashboard/default.html`;
+
+
+                    //- userForm.style.display = 'none';
+                    //- companyForm.style.display = 'block';
+                  });
+                </script>
+                <div class="position-relative mt-4">
+                  <hr />
+                  <div class="divider-content-center">or register with</div>
+                </div>
+                <div class="row g-2 mt-2">
+                  <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="#"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
+                  <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span class="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="../../../vendors/popper/popper.min.js"></script>
+    <script src="../../../vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../../../vendors/anchorjs/anchor.min.js"></script>
+    <script src="../../../vendors/is/is.min.js"></script>
+    <script src="../../../vendors/fontawesome/all.min.js"></script>
+    <script src="../../../vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="../../../vendors/list.js/list.min.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+
+  </body>
+
+</html>
